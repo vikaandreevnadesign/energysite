@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вика Кокурина | Я ЗДЕСЬ</title>
+    <title>Вика Кокурина</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -14,8 +14,6 @@
             --teal: #2dd4bf;
             --deep: #0f172a;
             --text: #f8fafc;
-            --wa-green: #25D366;
-            --tg-blue: #0088cc;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,259 +21,187 @@
             font-family: 'Montserrat', sans-serif; 
             background: var(--deep); 
             color: var(--text); 
-            overflow-x: hidden;
             scroll-behavior: smooth;
+            line-height: 1.6;
         }
 
-        /* --- HERO С ФОТОГРАФИЕЙ --- */
-        .hero {
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: url('your-main-photo.jpg') center/cover no-repeat;
-        }
+        .section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, var(--deep), transparent 70%);
-        }
+        /* ВЕРХНЯЯ ЧАСТЬ (КАК В ОРИГИНАЛЕ) */
+        .header-box { padding-top: 60px; }
+        .crystals-img { width: 140px; margin-bottom: 20px; opacity: 0.8; }
+        .main-photo { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; border: 2px solid var(--teal); margin: 0 auto 25px; display: block; }
+        .name-heading { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; margin-bottom: 10px; font-weight: 300; }
+        .regalia { font-size: 1.1rem; letter-spacing: 4px; color: var(--teal); text-transform: uppercase; font-weight: 200; }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-        }
-
-        /* КНОПКА "Я ЗДЕСЬ" С АНИМАЦИЕЙ */
-        .btn-i-am-here {
-            background: transparent;
-            border: 2px solid var(--teal);
-            color: var(--teal);
-            padding: 20px 50px;
-            font-size: 1.5rem;
-            letter-spacing: 5px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: 0.5s;
-            text-transform: uppercase;
-            font-family: 'Cormorant Garamond', serif;
+        /* КРУГЛАЯ КНОПКА ПЕРЕД МЕТОДАМИ */
+        .btn-trigger-wrap { margin: 50px 0; }
+        .btn-round-trigger {
+            width: 120px; height: 120px; border-radius: 50%; 
+            border: 1px solid var(--teal); background: transparent; 
+            color: var(--teal); cursor: pointer;
+            font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+            text-transform: uppercase; transition: 0.5s;
             animation: pulse-glow 2s infinite;
         }
-
         @keyframes pulse-glow {
-            0% { box-shadow: 0 0 5px var(--teal); }
-            50% { box-shadow: 0 0 25px var(--teal), 0 0 50px var(--violet); }
-            100% { box-shadow: 0 0 5px var(--teal); }
+            0%, 100% { box-shadow: 0 0 5px var(--teal); }
+            50% { box-shadow: 0 0 20px var(--teal), 0 0 40px var(--violet); }
         }
 
-        .btn-i-am-here:hover {
-            background: var(--teal);
-            color: var(--deep);
-            transform: scale(1.1);
-        }
+        /* АККОРДЕОН */
+        .accordion-container { max-width: 750px; margin: 0 auto; text-align: left; }
+        .acc-block { border-bottom: 1px solid rgba(139, 92, 246, 0.3); }
+        .acc-trigger { padding: 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .acc-panel { padding: 0 25px; max-height: 0; overflow: hidden; transition: 0.4s ease-out; opacity: 0; font-size: 0.95rem; }
+        .acc-block.active .acc-panel { padding-bottom: 25px; max-height: 200px; opacity: 1; }
+        .acc-block.active .acc-trigger { color: var(--teal); }
 
-        /* --- СЕКЦИИ --- */
-        .content-section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
-        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; margin-bottom: 50px; color: var(--teal); }
+        /* ПАКЕТЫ И ЦЕНЫ */
+        .price-section { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px; }
+        .card-price { padding: 40px 30px; border-radius: 35px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); width: 280px; }
+        .card-price.hit { border-color: var(--violet); background: rgba(139, 92, 246, 0.05); }
+        .price-num { font-size: 2rem; color: var(--teal); margin: 15px 0; font-family: 'Cormorant Garamond', serif; }
 
-        /* --- МЕТОДЫ (Сетка) --- */
-        .methods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .method-card { background: rgba(255,255,255,0.03); padding: 40px; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.2); transition: 0.3s; }
-        .method-card:hover { border-color: var(--teal); background: rgba(139, 92, 246, 0.05); }
+        /* ОТЗЫВЫ */
+        .feedback-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .feedback-item { padding: 30px; background: rgba(255,255,255,0.02); border-radius: 20px; text-align: left; border-left: 2px solid var(--violet); }
 
-        /* --- РЕЗУЛЬТАТЫ --- */
-        .results-box { background: rgba(45, 212, 191, 0.05); padding: 60px 20px; border-radius: 50px; }
-        .res-list { list-style: none; max-width: 700px; margin: 0 auto; text-align: left; }
-        .res-list li { font-size: 1.2rem; margin-bottom: 20px; display: flex; gap: 20px; align-items: flex-start; }
-        .res-list i { color: var(--teal); font-size: 1.5rem; }
+        /* ИНТЕРАКТИВ (АФФИРМАЦИИ И КАРТА) */
+        .magic-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+        .magic-card-ui { width: 260px; height: 380px; perspective: 1000px; cursor: pointer; }
+        .magic-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
+        .magic-card-ui.is-open .magic-inner { transform: rotateY(180deg); }
+        .card-side { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 25px; display: flex; align-items: center; justify-content: center; padding: 25px; text-align: center; }
+        .side-front { background: linear-gradient(135deg, var(--deep), var(--violet)); border: 2px solid var(--teal); font-size: 1rem; letter-spacing: 2px; }
+        .side-back { background: #fff; color: #000; transform: rotateY(180deg); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; border: 5px double var(--teal); }
 
-        /* --- ПАКЕТЫ УСЛУГ / ЦЕНЫ --- */
-        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .price-card { padding: 50px 30px; border-radius: 40px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
-        .price-card.featured { border: 2px solid var(--violet); background: rgba(139, 92, 246, 0.07); transform: scale(1.05); }
+        .tabs-ui { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; }
+        .tab-item { background: transparent; border: 1px solid var(--violet); color: white; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-size: 0.8rem; }
+        .tab-item.active { background: var(--violet); }
 
-        /* --- ОТЗЫВЫ --- */
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 50px; }
-        .review-card { background: rgba(255,255,255,0.02); padding: 30px; border-radius: 25px; border-left: 4px solid var(--violet); text-align: left; }
-        .review-card p { font-style: italic; opacity: 0.9; line-height: 1.6; }
-        .review-author { display: block; margin-top: 15px; font-weight: 600; color: var(--teal); }
-
-        /* --- КАРТА ДНЯ (АФФИРМАЦИИ ПО СФЕРАМ) --- */
-        .category-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
-        .tab-btn { background: transparent; border: 1px solid var(--violet); color: white; padding: 10px 20px; cursor: pointer; border-radius: 20px; }
-        .tab-btn.active { background: var(--violet); }
-
-        .magic-card { 
-            width: 280px; height: 400px; margin: 0 auto; perspective: 1000px; cursor: pointer;
-        }
-        .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
-        .magic-card.is-flipped .card-inner { transform: rotateY(180deg); }
-        .card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; display: flex; align-items: center; justify-content: center; padding: 30px; }
-        .card-front { background: linear-gradient(135deg, var(--deep), var(--violet)); border: 2px solid var(--teal); font-size: 1.2rem; letter-spacing: 2px; text-align: center; }
-        .card-back { background: #fff; color: var(--deep); transform: rotateY(180deg); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; text-align: center; border: 5px double var(--teal); }
-
-        /* --- КНОПКИ СВЯЗИ --- */
-        .contact-btn { display: inline-flex; align-items: center; gap: 15px; padding: 20px 40px; border-radius: 50px; text-decoration: none; color: white; font-weight: 600; margin: 10px; transition: 0.3s; }
-        .btn-telegram { background: var(--tg-blue); }
-        .btn-whatsapp { background: var(--wa-green); }
-
+        /* КОНТАКТЫ */
+        .btn-social { display: inline-block; padding: 16px 35px; border-radius: 50px; color: white; text-decoration: none; margin: 10px; font-weight: 600; transition: 0.3s; }
     </style>
 </head>
 <body>
 
-    <!-- HERO С ФОТО И КНОПКОЙ -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; margin-bottom: 20px;">Вика Кокурина</h1>
-            <button class="btn-i-am-here" onclick="document.getElementById('methods').scrollIntoView()">Я ЗДЕСЬ</button>
-        </div>
-    </section>
+    <!-- БЛОК 1: ШАПКА -->
+    <header class="section header-box">
+        <img src="crystals.png" class="crystals-img" alt="crystals">
+        <img src="your-photo.jpg" class="main-photo" alt="Виктория">
+        <h1 class="name-heading">Вика Кокурина</h1>
+        <p class="regalia">Астролог • Энергокоуч</p>
+    </header>
 
-    <!-- МЕТОДЫ РАБОТЫ -->
-    <section class="content-section" id="methods">
-        <h2 class="section-title">Методы работы</h2>
-        <div class="methods-grid">
-            <div class="method-card">
-                <h3>Энерготерапия</h3>
-                <p>Метод Тани Соло. Работа с полем, фигурами и вашим внутренним состоянием.</p>
-            </div>
-            <div class="method-card">
-                <h3>Астрология</h3>
-                <p>Ваша натальная карта как ДНК вашей судьбы и возможностей.</p>
-            </div>
-            <div class="method-card">
-                <h3>Цифровая психология</h3>
-                <p>Точный расчет ваших стратегий успеха по дате рождения.</p>
-            </div>
-        </div>
-    </section>
+    <!-- КРУГЛАЯ КНОПКА -->
+    <div class="btn-trigger-wrap">
+        <button class="btn-round-trigger" onclick="document.getElementById('methods-anchor').scrollIntoView()">Я здесь</button>
+    </div>
 
-    <!-- РЕЗУЛЬТАТЫ -->
-    <section class="content-section">
-        <div class="results-box">
-            <h2 class="section-title">Что вы получите</h2>
-            <ul class="res-list">
-                <li><i class="fas fa-check"></i> <span>Полное высвобождение заблокированной энергии.</span></li>
-                <li><i class="fas fa-check"></i> <span>Ясное видение своего пути без чужих ожиданий.</span></li>
-                <li><i class="fas fa-check"></i> <span>Состояние «в потоке», где всё случается наилучшим образом.</span></li>
-                <li><i class="fas fa-check"></i> <span>Конкретные инструменты для самоподдержки каждый день.</span></li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- ПАКЕТЫ УСЛУГ (ДОПОЛНЕНО) -->
-    <section class="content-section">
-        <h2 class="section-title">Пакеты услуг</h2>
-        <div class="price-grid">
-            <div class="price-card">
-                <h3>LIGHT</h3>
-                <p style="font-size: 2rem; color: var(--teal); margin: 20px 0;">9 000 ₽</p>
-                <p>Разбор личности (Астро + Цифра)</p>
+    <!-- БЛОК 2: МЕТОДЫ -->
+    <section class="section" id="methods-anchor">
+        <h2 class="name-heading" style="font-size: 2.8rem;">Методы работы</h2>
+        <div class="accordion-container">
+            <div class="acc-block" onclick="this.classList.toggle('active')">
+                <div class="acc-trigger">Энерготерапия <i class="fas fa-plus"></i></div>
+                <div class="acc-panel">Метод глубокой трансформации через работу с полем и подсознанием для устранения блоков.</div>
             </div>
-            <div class="price-card featured">
-                <h3>BASE</h3>
-                <p style="font-size: 2rem; color: var(--teal); margin: 20px 0;">14 000 ₽</p>
-                <p>Разбор + 1 Энергосессия</p>
+            <div class="acc-block" onclick="this.classList.toggle('active')">
+                <div class="acc-trigger">Астрология <i class="fas fa-plus"></i></div>
+                <div class="acc-panel">Разбор натальной карты для выявления сильных сторон, финансов и предназначения.</div>
             </div>
-            <div class="price-card">
-                <h3>PRO</h3>
-                <p style="font-size: 2rem; color: var(--teal); margin: 20px 0;">18 000 ₽</p>
-                <p>3 сессии + МАК-коучинг</p>
+            <div class="acc-block" onclick="this.classList.toggle('active')">
+                <div class="acc-trigger">Цифровая психология <i class="fas fa-plus"></i></div>
+                <div class="acc-panel">Анализ даты рождения как кода вашей реализации и стратегии успеха.</div>
             </div>
         </div>
     </section>
 
-    <!-- ОТЗЫВЫ (ДОПОЛНЕНО) -->
-    <section class="content-section" style="background: rgba(255,255,255,0.01);">
-        <h2 class="section-title">Отзывы</h2>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <p>"Вика помогла мне увидеть то, что я игнорировала годами. После сессии энергия просто хлынула, и я наконец-то начала действовать."</p>
-                <span class="review-author">Марина, Москва</span>
+    <!-- БЛОК 3: ПАКЕТЫ -->
+    <section class="section">
+        <h2 class="name-heading" style="font-size: 2.8rem;">Стоимость</h2>
+        <div class="price-section">
+            <div class="card-price"><h3>LIGHT</h3><p class="price-num">9 000 ₽</p><p>Разбор личности</p></div>
+            <div class="card-price hit"><h3>BASE</h3><p class="price-num">14 000 ₽</p><p>Разбор + Сессия</p></div>
+            <div class="card-price"><h3>PRO</h3><p class="price-num">18 000 ₽</p><p>Полное ведение</p></div>
+        </div>
+    </section>
+
+    <!-- БЛОК 4: ОТЗЫВЫ -->
+    <section class="section">
+        <h2 class="name-heading" style="font-size: 2.8rem;">Отзывы</h2>
+        <div class="feedback-grid">
+            <div class="feedback-item">
+                <p>"Вика невероятно чувствует поле. Состояние после сессии — полет."</p>
+                <small style="color:var(--teal); display:block; margin-top:10px;">— Кристина</small>
             </div>
-            <div class="review-card">
-                <p>"Астроразбор был невероятно точным. Теперь у меня есть пошаговый план, и я больше не боюсь проявляться."</p>
-                <span class="review-author">Елена, онлайн</span>
-            </div>
-            <div class="review-card">
-                <p>"Состояние после работы — это космос. Ясная голова и четкое понимание, что делать дальше."</p>
-                <span class="review-author">Ольга, Санкт-Петербург</span>
+            <div class="feedback-item">
+                <p>"Астроразбор открыл глаза на многие вещи. Теперь всё понятно."</p>
+                <small style="color:var(--teal); display:block; margin-top:10px;">— Анна</small>
             </div>
         </div>
     </section>
 
-    <!-- АВТОРСКИЕ ИНСТРУМЕНТЫ (АФФИРМАЦИИ И КАРТА ДНЯ) -->
-    <section class="content-section">
-        <h2 class="section-title">Твое послание</h2>
-        <div class="category-tabs">
-            <button class="tab-btn active" onclick="setCategory('love', this)">Любовь</button>
-            <button class="tab-btn" onclick="setCategory('money', this)">Деньги</button>
-            <button class="tab-btn" onclick="setCategory('state', this)">Состояние</button>
-            <button class="tab-btn" onclick="setCategory('daily', this)" style="border-color: var(--teal);">КАРТА ДНЯ</button>
-        </div>
-
-        <div class="magic-card" id="mainCard" onclick="flipCard()">
-            <div class="card-inner">
-                <div class="card-face card-front">УЗНАТЬ СВОЕ ПОСЛАНИЕ</div>
-                <div class="card-back" id="affirmationText">Сначала выбери сферу...</div>
+    <!-- БЛОК 5: ИНТЕРАКТИВ -->
+    <section class="section">
+        <h2 class="name-heading" style="font-size: 2.8rem;">Послание для тебя</h2>
+        <div class="magic-flex">
+            <div>
+                <div class="tabs-ui">
+                    <button class="tab-item active" onclick="setMode('love', this)">Любовь</button>
+                    <button class="tab-item" onclick="setMode('money', this)">Деньги</button>
+                </div>
+                <div class="magic-card-ui" id="affCard" onclick="openMagic('affCard', 'affMsg', true)">
+                    <div class="magic-inner">
+                        <div class="card-side side-front">АФФИРМАЦИЯ</div>
+                        <div class="card-side side-back" id="affMsg">Нажми, чтобы узнать</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style="height: 38px;"></div>
+                <div class="magic-card-ui" id="dayCard" onclick="openMagic('dayCard', 'dayMsg', false)">
+                    <div class="magic-inner">
+                        <div class="card-side side-front" style="border-color:var(--violet)">КАРТА ДНЯ</div>
+                        <div class="card-side side-back" id="dayMsg">...</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- СВЯЗЬ -->
-    <section class="content-section">
-        <h2 class="section-title">Связаться со мной</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 40px;">Очно в Москве / Онлайн по всему миру</p>
-        
-        <a href="https://t.me/kowiktori" class="contact-btn btn-telegram"><i class="fab fa-telegram"></i> Telegram</a>
-        <a href="https://wa.me/79080288580" class="contact-btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-
-        <div style="margin-top: 100px; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 50px;">
-            <p>Если нужна прямая глубокая трансформация — начни со смены пространства.</p>
-            <a href="https://v0-realtor-landing-page-eight.vercel.app/" style="color: var(--teal); font-size: 1.5rem; text-decoration: none; display: block; margin-top: 20px;">
-                НЕДВИЖИМОСТЬ В МОСКВЕ <i class="fas fa-external-link-alt" style="font-size: 1rem;"></i>
-            </a>
+    <!-- БЛОК 6: КОНТАКТЫ -->
+    <footer class="section">
+        <a href="https://t.me/kowiktori" class="btn-social" style="background:#0088cc">Telegram</a>
+        <a href="https://wa.me/79080288580" class="btn-social" style="background:#25D366">WhatsApp</a>
+        <div style="margin-top:60px; opacity:0.5">
+            <a href="https://v0-realtor-landing-page-eight.vercel.app/" style="color:var(--teal); text-decoration:none;">НЕДВИЖИМОСТЬ В МОСКВЕ</a>
         </div>
-    </section>
+    </footer>
 
     <script>
         const data = {
-            love: ["Я открыта для любви и принятия", "Мои отношения полны гармонии", "Я люблю и любима"],
-            money: ["Деньги приходят ко мне легко", "Я — магнит для изобилия", "Мой доход постоянно растет"],
-            state: ["Я здесь и сейчас", "Внутри меня безграничный покой", "Я доверяю своему пути"],
-            daily: [
-                "Сегодня день для смелых решений", 
-                "Доверься своему внутреннему голосу", 
-                "Вселенная готовит для тебя подарок", 
-                "Твоя энергия — твой главный актив",
-                "Действуй из состояния любви, а не страха"
-            ]
+            love: ["Я излучаю любовь", "Мое сердце открыто", "Я заслуживаю лучшего"],
+            money: ["Мой доход растет", "Я магнит для денег", "Возможности повсюду"],
+            day: ["Доверься процессу", "Сегодня твой день", "Действуй сейчас"]
         };
+        let currentMode = 'love';
 
-        let currentCategory = 'love';
-
-        function setCategory(cat, el) {
-            currentCategory = cat;
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            el.classList.add('active');
-            document.getElementById('mainCard').classList.remove('is-flipped');
+        function setMode(m, b) {
+            currentMode = m;
+            document.querySelectorAll('.tab-item').forEach(btn => btn.classList.remove('active'));
+            b.classList.add('active');
+            document.getElementById('affCard').classList.remove('is-open');
         }
 
-        function flipCard() {
-            const card = document.getElementById('mainCard');
-            if(!card.classList.contains('is-flipped')) {
-                const list = data[currentCategory];
-                const random = list[Math.floor(Math.random() * list.length)];
-                document.getElementById('affirmationText').innerText = random;
-                card.classList.add('is-flipped');
-            } else {
-                card.classList.remove('is-flipped');
-            }
+        function openMagic(cid, tid, isAff) {
+            const card = document.getElementById(cid);
+            if(!card.classList.contains('is-open')) {
+                const list = isAff ? data[currentMode] : data.day;
+                document.getElementById(tid).innerText = list[Math.floor(Math.random() * list.length)];
+                card.classList.add('is-open');
+            } else { card.classList.remove('is-open'); }
         }
     </script>
 </body>
