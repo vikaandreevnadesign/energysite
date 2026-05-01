@@ -6,7 +6,6 @@
     <title>Вика Кокурина | Путь к себе — Энерготерапевт, Астролог</title>
     <meta name="description" content="Вика Кокурина — ваш проводник в мир ресурсного состояния. Энерготерапия, астрология, МАК и цифровая психология. Работа с блоками и страхами.">
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
@@ -28,7 +27,6 @@
             overflow-x: hidden;
         }
 
-        /* --- Header & Hero --- */
         header {
             height: 100vh;
             display: flex;
@@ -65,7 +63,7 @@
             border: 8px solid white;
             box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
             margin-bottom: 30px;
-            background: #eee; /* Заглушка, пока нет фото */
+            background: #eee;
         }
 
         .hero-photo-container img {
@@ -74,7 +72,6 @@
             object-fit: cover;
         }
 
-        /* --- Energy Circle Section --- */
         .energy-section {
             padding: 100px 20px;
             position: relative;
@@ -130,25 +127,14 @@
             border: 1px solid var(--soft-pink);
             width: 220px;
             transition: all 0.4s ease;
-            cursor: default;
             z-index: 5;
         }
 
-        .service-block:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
-            border-color: var(--primary-violet);
-        }
-
-        .service-block h3 { color: var(--deep-purple); margin-bottom: 8px; }
-
-        /* Позиции блоков */
         .block-1 { top: 10%; left: 10%; }
         .block-2 { top: 10%; right: 10%; }
         .block-3 { bottom: 15%; left: 5%; }
         .block-4 { bottom: 15%; right: 5%; }
 
-        /* Линии (нити) */
         svg.threads {
             position: absolute;
             top: 0; left: 0;
@@ -163,11 +149,8 @@
             animation: flow 10s linear infinite;
         }
 
-        @keyframes flow {
-            to { stroke-dashoffset: -100; }
-        }
+        @keyframes flow { to { stroke-dashoffset: -100; } }
 
-        /* --- Test Section --- */
         .test-section {
             background: var(--deep-purple);
             color: white;
@@ -194,16 +177,9 @@
             border-radius: 30px;
             cursor: pointer;
             transition: 0.3s;
-            font-size: 1rem;
         }
 
         .quiz-btn:hover { background: var(--primary-violet); }
-
-        /* --- Contacts & Footer --- */
-        .contacts {
-            padding: 80px 20px;
-            text-align: center;
-        }
 
         .social-links {
             display: flex;
@@ -219,32 +195,22 @@
             text-decoration: none;
             color: white;
             font-weight: 600;
-            transition: 0.3s;
         }
 
         .wa { background: #25D366; }
         .tg { background: #0088cc; }
-        .inst { background: #E1306C; }
 
         .realtor-banner {
             margin-top: 100px;
             background: #f1f5f9;
             padding: 40px;
             border-radius: 20px;
-            font-size: 0.95rem;
-        }
-
-        .realtor-banner a {
-            color: var(--primary-violet);
-            font-weight: 600;
-            text-decoration: none;
         }
 
         @media (max-width: 768px) {
             .energy-container { height: auto; flex-direction: column; gap: 20px; }
             .service-block { position: static; width: 100%; }
             svg.threads { display: none; }
-            .central-orb { margin: 40px 0; }
         }
     </style>
 </head>
@@ -253,11 +219,10 @@
     <header>
         <div class="domain-name">ya-est.ru</div>
         <div class="hero-photo-container">
-            <!-- ЗАМЕНИТЕ ИМЯ ФАЙЛА НИЖЕ НА ВАШЕ -->
             <img src="my-photo.jpg" alt="Вика Кокурина">
         </div>
         <h1>Вика Кокурина</h1>
-        <p style="font-size: 1.3rem; font-style: italic; color: var(--deep-purple);">Путь к себе через осознанность</p>
+        <p>Путь к себе через осознанность</p>
     </header>
 
     <section class="energy-section">
@@ -269,35 +234,28 @@
                 <line x1="50%" y1="50%" x2="15%" y2="80%" />
                 <line x1="50%" y1="50%" x2="85%" y2="80%" />
             </svg>
-
             <div class="central-orb">Я ЕСТЬ</div>
-
             <div class="service-block block-1">
                 <h3>ЭНЕРГОТЕРАПИЯ</h3>
-                <p>Трансформация состояний, работа с внутренним ресурсом и светом.</p>
+                <p>Трансформация состояний и работа с внутренним светом.</p>
             </div>
-
             <div class="service-block block-2">
                 <h3>АСТРОЛОГИЯ</h3>
-                <p>Навигация по вашей судьбе через звезды и планетарные циклы.</p>
+                <p>Навигация по вашей судьбе через звезды.</p>
             </div>
-
             <div class="service-block block-3">
                 <h3>МАК</h3>
-                <p>Метафорические карты — диалог с вашим подсознанием через образы.</p>
+                <p>Диалог с вашим подсознанием через образы.</p>
             </div>
-
             <div class="service-block block-4">
                 <h3>ЦИФРОВАЯ ПСИХОЛОГИЯ</h3>
-                <p>Магия чисел и точный расчет вашего потенциала.</p>
+                <p>Точный расчет вашего потенциала.</p>
             </div>
         </div>
     </section>
 
     <section class="test-section">
         <h2>Что мешает вам сейчас?</h2>
-        <p>Пройдите короткий тест и получите ключ к своему состоянию</p>
-        
         <div id="quiz-container">
             <div id="question-text" style="font-size: 1.2rem; margin-bottom: 20px;">Как вы чувствуете себя по утрам?</div>
             <div id="options">
@@ -308,46 +266,32 @@
         </div>
     </section>
 
-    <section class="contacts">
-        <h2 class="section-title">Мои контакты</h2>
-        <p>Готовы начать перемены? Напишите мне удобным способом:</p>
-        
+    <section style="padding: 80px 20px; text-align: center;">
+        <h2 class="section-title">Связаться со мной</h2>
         <div class="social-links">
             <a href="https://wa.me/79080288580" class="social-btn wa">WhatsApp</a>
             <a href="https://t.me/kowiktori" class="social-btn tg">Telegram</a>
-            <a href="https://instagram.com/kowiktori" class="social-btn inst">Instagram</a>
         </div>
-
         <div class="realtor-banner">
-            <p>💡 <b>Кстати, об изменениях в жизни:</b> Иногда они начинаются с нового дома. <br>
-            Я также профессиональный риэлтор и помогу вам найти идеальное пространство.</p>
-            <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank">Моя презентация недвижимости →</a>
+            <p>Я также помогу вам найти идеальное жилье как риэлтор.</p>
+            <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank" style="color: var(--primary-violet); font-weight: bold;">Презентация недвижимости →</a>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #999;">
-        &copy; 2024 Вика Кокурина | ya-est.ru
-    </footer>
-
     <script>
         let step = 0;
-        const questions = [
-            "Какая сфера сейчас больше всего беспокоит?",
-            "Что вы хотите почувствовать в итоге работы?"
-        ];
-        const finalMessage = "Ваш запрос понятен. Для глубокого разбора напишите мне слово 'ЭНЕРГИЯ' в любой мессенджер.";
-
+        const questions = ["Какая сфера сейчас больше всего беспокоит?", "Что вы хотите почувствовать в итоге?"];
         function nextQuestion() {
             step++;
             if (step < questions.length) {
                 document.getElementById('question-text').innerText = questions[step];
             } else {
                 document.getElementById('quiz-container').innerHTML = `
-                    <div style="font-size: 1.2rem; line-height: 1.6;">${finalMessage}</div>
-                    <a href="https://wa.me/79080288580" class="social-btn wa" style="display:inline-block; margin-top:20px;">Написать в WhatsApp</a>
+                    <p>Напишите мне слово 'ЭНЕРГИЯ' для разбора.</p>
+                    <a href="https://wa.me/79080288580" class="social-btn wa" style="display:inline-block; margin-top:20px;">Написать</a>
                 `;
             }
         }
     </script>
 </body>
-</html>
+                </html>
