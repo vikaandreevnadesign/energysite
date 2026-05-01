@@ -55,7 +55,7 @@
             letter-spacing: 12px;
             text-transform: uppercase;
             font-weight: 300;
-            white-space: nowrap; /* Не дает фразе съезжать */
+            white-space: nowrap;
         }
 
         .hero-intro {
@@ -83,18 +83,13 @@
         .profile-circle img { width: 100%; height: 100%; object-fit: cover; }
 
         /* --- TEXT BLOCKS --- */
-        .text-block {
-            padding: 80px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
+        .text-block { padding: 80px 20px; max-width: 800px; margin: 0 auto; text-align: center; }
         .text-block h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 30px; color: var(--teal); }
         .list-items { text-align: left; display: inline-block; list-style: none; }
         .list-items li { margin: 15px 0; font-size: 1.1rem; opacity: 0.8; display: flex; align-items: flex-start; }
         .list-items li::before { content: "—"; margin-right: 15px; color: var(--violet); }
 
-        /* --- SERVICES & ENERGY MAP --- */
+        /* --- ENERGY MAP --- */
         .energy-section { padding: 80px 20px; position: relative; }
         .energy-grid {
             display: grid;
@@ -128,14 +123,28 @@
             display: inline-flex; align-items: center; justify-content: center;
             gap: 10px; margin: 10px; text-decoration: none; padding: 16px 30px;
             border-radius: 50px; transition: 0.3s; font-weight: 600; cursor: pointer;
+            border: none; font-family: 'Montserrat', sans-serif;
         }
-        .btn-wa { background: var(--wa-green); color: white; border: none; }
-        .btn-tg { background: var(--tg-blue); color: white; border: none; }
-        .btn-outline { border: 1px solid var(--teal); color: var(--teal); }
+        .btn-wa { background: var(--wa-green); color: white; }
+        .btn-tg { background: var(--tg-blue); color: white; }
+        .btn-outline { border: 1px solid var(--teal); color: var(--teal); background: transparent; }
+        .btn-outline:hover { background: var(--teal); color: var(--deep); }
+
+        /* --- TEST BOX --- */
+        .quiz-container {
+            background: rgba(255,255,255,0.03);
+            padding: 50px 30px;
+            border-radius: 40px;
+            border: 1px solid var(--violet);
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
         /* --- GIFTS --- */
-        .gift-header { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin: 60px 0 20px; color: var(--teal); text-align: center; }
-        .project-block { margin: 20px auto 40px; max-width: 900px; border-radius: 30px; overflow: hidden; background: #fff; }
+        .gift-header { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin: 80px 0 20px; color: var(--teal); text-align: center; }
+        .project-block { margin: 20px auto 60px; max-width: 900px; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
 
         @media (max-width: 768px) {
             .energy-grid { grid-template-columns: 1fr; }
@@ -161,6 +170,7 @@
         </div>
     </section>
 
+    <!-- БЛОК БОЛЕЙ -->
     <section class="text-block">
         <h2>Если ты сейчас:</h2>
         <ul class="list-items">
@@ -170,9 +180,10 @@
             <li>как будто живёшь не свою жизнь</li>
             <li>много думаешь, но нет ясности</li>
         </ul>
-        <p style="margin-top:30px; font-style:italic; color:var(--teal);">То мы можем разобрать твою ситуацию и понять, что тебе мешает</p>
+        <p style="margin-top:30px; font-style:italic; color:var(--teal); font-size: 1.1rem;">То мы можем разобрать твою ситуацию и понять, что тебе мешает</p>
     </section>
 
+    <!-- КАРТА УСЛУГ -->
     <section class="energy-section">
         <div class="energy-grid">
             <div class="side-services">
@@ -200,7 +211,8 @@
         <svg id="energy-svg" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1;"></svg>
     </section>
 
-    <section class="text-block" style="background: rgba(45, 212, 191, 0.05); border-radius: 50px;">
+    <!-- БЛОК РЕЗУЛЬТАТОВ -->
+    <section class="text-block" style="background: rgba(45, 212, 191, 0.05); border-radius: 60px;">
         <h2>После работы со мной:</h2>
         <ul class="list-items">
             <li>появляется спокойствие</li>
@@ -211,54 +223,99 @@
         </ul>
     </section>
 
+    <!-- УЛУЧШЕННЫЙ ТЕСТ -->
     <section class="text-block">
-        <div id="quiz" style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 30px; border: 1px solid var(--violet);">
-            <div id="q-text" style="font-size: 1.2rem; margin-bottom: 25px;">Что вы чувствуете чаще всего в последнее время?</div>
+        <div class="quiz-container" id="quiz">
+            <h3 id="q-title" style="margin-bottom: 10px; color: var(--teal); font-size: 0.9rem; letter-spacing: 2px;">ШАГ 1 ИЗ 3</h3>
+            <div id="q-text" style="font-size: 1.4rem; margin-bottom: 30px; line-height: 1.4;">Что вы чувствуете чаще всего в последнее время?</div>
             <div id="q-options">
-                <button class="btn-main btn-outline" style="width:100%;" onclick="nextStep()">Постоянную усталость</button>
-                <button class="btn-main btn-outline" style="width:100%; margin-top:10px;" onclick="nextStep()">Тревогу и страх</button>
+                <button class="btn-main btn-outline" style="width:100%;" onclick="nextStep(0)">Постоянную усталость и апатию</button>
+                <button class="btn-main btn-outline" style="width:100%;" onclick="nextStep(1)">Тревогу и страх за будущее</button>
+                <button class="btn-main btn-outline" style="width:100%;" onclick="nextStep(2)">Чувство, что я стою на месте</button>
             </div>
         </div>
     </section>
 
+    <!-- ПОДАРКИ -->
     <h2 class="gift-header">Медитация для уверенности</h2>
     <section class="project-block">
-        <iframe src="meditation.html" style="width: 100%; height: 600px; border: none;"></iframe>
+        <iframe src="meditation.html" style="width: 100%; height: 650px; border: none;"></iframe>
     </section>
 
     <h2 class="gift-header">Аффирмации для вашего состояния</h2>
     <section class="project-block">
-        <iframe src="affirmations.html" style="width: 100%; height: 600px; border: none;"></iframe>
+        <iframe src="affirmations.html" style="width: 100%; height: 650px; border: none;"></iframe>
     </section>
 
+    <!-- ФИНАЛЬНЫЙ БЛОК -->
     <section class="text-block" style="background: #0a0f1e; border-top: 1px solid rgba(255,255,255,0.1);">
-        <p style="font-size: 1.3rem; margin-bottom: 20px;">Если ты дочитала до этого момента — значит тебе это уже откликается.</p>
-        <p style="font-weight: 600; color: var(--teal); margin-bottom: 40px;">Не игнорируй это состояние. Напиши мне, и мы разберём твою ситуацию.</p>
+        <p style="font-size: 1.3rem; margin-bottom: 20px; opacity: 0.9;">Если ты дочитала до этого момента — значит тебе это уже откликается.</p>
+        <p style="font-weight: 600; color: var(--teal); margin-bottom: 40px; font-size: 1.1rem;">Не игнорируй это состояние. Напиши мне, и мы разберём твою ситуацию.</p>
         
-        <a href="https://wa.me/79080288580?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D1%81%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BC%D0%BE%D1%8E%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D1%8E" class="btn-main btn-wa">
-            <i class="fab fa-whatsapp"></i> Написать в WhatsApp
-        </a>
-        
-        <a href="https://t.me/kowiktori" class="btn-main btn-tg">
-            <i class="fab fa-telegram-plane"></i> Написать в Telegram
-        </a>
+        <div style="margin-bottom: 60px;">
+            <a href="https://wa.me/79080288580?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D1%81%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BC%D0%BE%D1%8E%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D1%8E" class="btn-main btn-wa">
+                <i class="fab fa-whatsapp"></i> Написать в WhatsApp
+            </a>
+            <a href="https://t.me/kowiktori" class="btn-main btn-tg">
+                <i class="fab fa-telegram-plane"></i> Написать в Telegram
+            </a>
+        </div>
 
-        <br><br>
-        <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank" class="btn-main btn-outline">
-            Подбор недвижимости
-        </a>
+        <!-- ПЕРЕХОД К НЕДВИЖИМОСТИ -->
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 50px;">
+            <p style="font-style: italic; opacity: 0.8; margin-bottom: 25px;">Хочешь, чтобы твой дом стал местом силы? Начни менять свою жизнь с нового пространства.</p>
+            <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank" class="btn-main btn-outline" style="padding: 18px 40px;">
+                Подбор недвижимости
+            </a>
+        </div>
+        
+        <div style="margin-top: 60px; font-size: 0.8rem; opacity: 0.4; letter-spacing: 1px;">
+            @kowiktori • +79080288580 • ya-est.ru
+        </div>
     </section>
 
     <script>
-        function nextStep() {
-            const waLink = "https://wa.me/79080288580?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D1%81%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BC%D0%BE%D1%8E%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D1%8E";
-            document.getElementById('quiz').innerHTML = `
-                <h3 style="color:var(--teal); margin-bottom:15px;">Анализ завершен</h3>
-                <p>Вашей энергии нужен новый импульс.</p>
-                <a href="${waLink}" class="btn-main btn-wa" style="margin-top:20px;">Разобрать мою ситуацию</a>
-            `;
+        // ЛОГИКА МНОГОШАГОВОГО ТЕСТА
+        const testData = [
+            { 
+                step: "ШАГ 2 ИЗ 3",
+                text: "Где в теле вы чаще всего чувствуете дискомфорт или зажим?", 
+                options: ["В горле (трудно выражать себя)", "В груди (тяжесть, тревога)", "В животе (страх, неуверенность)"] 
+            },
+            { 
+                step: "ШАГ 3 ИЗ 3",
+                text: "Какой результат для вас сейчас важнее всего?", 
+                options: ["Просто выдохнуть и отдохнуть", "Обрести четкий план действий", "Почувствовать внутреннюю опору"] 
+            }
+        ];
+
+        let stepIndex = 0;
+
+        function nextStep(choice) {
+            const container = document.getElementById('quiz');
+            
+            if (stepIndex < testData.length) {
+                const data = testData[stepIndex];
+                document.getElementById('q-title').innerText = data.step;
+                document.getElementById('q-text').innerText = data.text;
+                
+                let buttons = "";
+                data.options.forEach((opt, i) => {
+                    buttons += `<button class="btn-main btn-outline" style="width:100%; margin-top:10px;" onclick="nextStep(${i})">${opt}</button>`;
+                });
+                document.getElementById('q-options').innerHTML = buttons;
+                stepIndex++;
+            } else {
+                const waLink = "https://wa.me/79080288580?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D1%81%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BC%D0%BE%D1%8E%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D1%8E";
+                container.innerHTML = `
+                    <h3 style="color:var(--teal); margin-bottom:20px; font-size: 1.8rem;">Анализ завершен</h3>
+                    <p style="line-height:1.6; margin-bottom:30px;">Ваше состояние требует внимания к энергетическим центрам. Самое время вернуть себе ресурс.</p>
+                    <a href="${waLink}" class="btn-main btn-wa" style="width:100%; margin:0;">Разобрать мою ситуацию</a>
+                `;
+            }
         }
 
+        // АНИМАЦИЯ ЛИНИЙ
         function drawLines() {
             const svg = document.getElementById('energy-svg');
             const orb = document.querySelector('.center-orb').getBoundingClientRect();
@@ -271,7 +328,7 @@
                 const y1 = orb.top + orb.height / 2 - svgRect.top;
                 const x2 = rect.left + rect.width / 2 - svgRect.left;
                 const y2 = rect.top + rect.height / 2 - svgRect.top;
-                linesHTML += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(139, 92, 246, 0.3)" stroke-width="1" />`;
+                linesHTML += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(139, 92, 246, 0.4)" stroke-width="1" stroke-dasharray="4" />`;
             });
             svg.innerHTML = linesHTML;
         }
