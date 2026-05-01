@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Вика Кокурина — энерготерапия</title>
+
+<meta name="description" content="Энерготерапия, астрология и работа с состоянием. Москва и онлайн.">
+
+<link rel="icon" href="favicon.ico">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+background: radial-gradient(circle at top, #1c1a2e, #0a0a12);
+font-family: 'Inter', sans-serif;
+position: relative;
+overflow-x: hidden;
+}
+
+/* ЗВЁЗДЫ */
+body::before {
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: radial-gradient(white 1px, transparent 1px);
+background-size: 40px 40px;
+opacity: 0.15;
+pointer-events: none;
+}
+
+/* мягкое свечение */
+body::after {
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle at 70% 20%, rgba(180,150,255,0.15), transparent 40%);
+pointer-events: none;
+}
+
+h1, h2 {
+font-family: 'Playfair Display', serif;
+}
+
+.glow {
+box-shadow: 0 0 15px rgba(180,150,255,0.25);
+transition: 0.3s;
+}
+
+.glow:hover {
+box-shadow: 0 0 30px rgba(180,150,255,0.5);
+transform: scale(1.03);
+}
+</style>
+</head>
+
+<body class="text-white">
+
+<section class="text-center py-24 px-6">
+<img src="images/photo.jpg" class="w-40 h-40 mx-auto rounded-full mb-6 border border-purple-300/40 object-cover">
+
+<h1 class="text-4xl mb-4">Вика Кокурина</h1>
+
+<p class="text-gray-300 max-w-xl mx-auto">
+Помогаю выйти из внутреннего тупика, обрести ясность и начать двигаться спокойно и уверенно
+</p>
+
+<a href="https://wa.me/79080288580" class="mt-8 inline-block bg-purple-300 text-black px-6 py-3 rounded-xl glow">
+Получить консультацию
+</a>
+</section>
+
+<section class="py-16 px-6 max-w-3xl mx-auto text-center">
+<h2 class="text-2xl text-purple-200 mb-6">Что такое энерготерапия</h2>
+
+<p class="text-gray-300 leading-relaxed">
+Это мягкая работа с внутренним состоянием.  
+Ты возвращаешь контакт с собой, ясность и спокойствие, из которого появляются решения.
+</p>
+</section>
+
+<section class="text-center py-16 px-6">
+<h2 class="text-2xl text-purple-200 mb-6">Карта дня</h2>
+
+<button onclick="getCard()" class="bg-purple-300 text-black px-8 py-3 rounded-xl glow">
+Вытянуть карту
+</button>
+
+<div class="mt-8 p-6 max-w-md mx-auto border border-purple-300/30 rounded-xl glow">
+<p id="cardResult"></p>
+</div>
+</section>
+
+<script>
+const cards = [
+"Замедлись и прислушайся к себе",
+"Ты уже на правильном пути",
+"Доверься процессу",
+"Сейчас важно не спешить",
+"Ты готова к следующему шагу",
+"Отпусти лишнее"
+];
+
+function getCard() {
+const random = cards[Math.floor(Math.random() * cards.length)];
+document.getElementById("cardResult").innerText = random;
+}
+</script>
+
+</body>
+</html>
