@@ -47,48 +47,32 @@
             background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), var(--deep));
         }
 
-        .hero-content { position: relative; z-index: 10; width: 100%; max-width: 800px; }
-
-        .concept-title {
+        .hero-content { position: relative; z-index: 10; max-width: 800px; }
+        .concept-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 8vw, 5.5rem); letter-spacing: 12px; text-transform: uppercase; font-weight: 300; }
+        
+        .hero-intro {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.8rem, 8vw, 5.5rem);
-            letter-spacing: 12px;
-            text-transform: uppercase;
-            font-weight: 300;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin: 25px auto;
+            max-width: 600px;
+            font-style: italic;
+            opacity: 0.9;
         }
 
-        .profile-circle {
-            width: 200px; height: 200px;
-            border-radius: 50%;
-            margin: 30px auto;
-            position: relative;
-            border: 2px solid rgba(255,255,255,0.2);
-            box-shadow: 0 0 30px var(--violet);
-            overflow: hidden;
-        }
+        .profile-circle { width: 180px; height: 180px; border-radius: 50%; margin: 25px auto; border: 2px solid rgba(255,255,255,0.2); box-shadow: 0 0 40px var(--violet); overflow: hidden; }
         .profile-circle img { width: 100%; height: 100%; object-fit: cover; }
-
         .hero-name { font-size: 1.8rem; font-weight: 600; letter-spacing: 3px; }
 
-        /* --- АФФИРМАЦИИ (Вернула!) --- */
-        .affirmation-block {
-            padding: 60px 20px;
-            background: rgba(139, 92, 246, 0.05);
-            text-align: center;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
-            font-style: italic;
-            line-height: 1.8;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
+        /* --- SECTIONS --- */
+        .content-section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; margin-bottom: 40px; color: var(--teal); }
+        .affirmation-text { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; line-height: 1.6; opacity: 0.9; }
 
-        /* --- TEXT BLOCKS --- */
-        .text-block { padding: 80px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
-        .text-block h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 30px; color: var(--teal); }
-        .list-items { text-align: left; display: inline-block; list-style: none; }
-        .list-items li { margin: 15px 0; font-size: 1.1rem; opacity: 0.8; display: flex; align-items: flex-start; }
-        .list-items li::before { content: "—"; margin-right: 15px; color: var(--violet); }
+        /* --- РЕЗУЛЬТАТ --- */
+        .result-list { text-align: left; max-width: 600px; margin: 0 auto; list-style: none; }
+        .result-list li { margin-bottom: 20px; font-size: 1.1rem; display: flex; align-items: flex-start; gap: 15px; }
+        .result-list i { color: var(--teal); margin-top: 5px; }
 
         /* --- ENERGY MAP (УСЛУГИ) --- */
         .energy-section { padding: 80px 20px; position: relative; }
@@ -110,7 +94,7 @@
             cursor: pointer;
             transition: 0.3s;
         }
-        .service-card:hover { border-color: var(--teal); }
+        .service-card:hover { border-color: var(--teal); background: rgba(255,255,255,0.05); }
         .card-detailed {
             max-height: 0;
             opacity: 0;
@@ -118,6 +102,7 @@
             transition: 0.4s;
             font-size: 0.85rem;
             line-height: 1.6;
+            text-align: left;
         }
         .service-card.active .card-detailed {
             max-height: 300px;
@@ -136,85 +121,111 @@
 
         /* --- ПАКЕТЫ --- */
         .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
-        .price-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
+        .price-card { 
+            background: rgba(255,255,255,0.05); 
+            padding: 40px 30px; 
+            border-radius: 30px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            text-align: center; 
+        }
         .price-card.best { border: 2px solid var(--violet); background: rgba(139, 92, 246, 0.05); }
-        .price-card h3 { color: var(--teal); margin-bottom: 10px; }
-        .price-val { font-size: 1.8rem; font-weight: 600; display: block; margin-bottom: 20px; }
+        .price-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--teal); margin-bottom: 15px; }
+        .price-val { font-size: 2.2rem; font-weight: 600; display: block; margin-bottom: 20px; }
+        .price-desc { font-size: 0.9rem; opacity: 0.8; line-height: 1.5; margin-bottom: 20px; }
 
-        /* --- БЛОК ДЛЯ КАРТ (Задел на будущее) --- */
-        .cards-preview { padding: 80px 20px; text-align: center; background: radial-gradient(circle at center, #1e293b, #0f172a); }
-
-        /* --- REVIEWS --- */
-        .review-box { display: flex; overflow-x: auto; gap: 20px; padding: 20px 0; margin-top: 40px; }
-        .review-card { min-width: 280px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; font-style: italic; font-size: 0.9rem; }
-
-        /* --- BUTTONS & FOOTER --- */
+        /* --- BUTTONS --- */
         .btn-main {
             display: inline-flex; align-items: center; justify-content: center;
-            gap: 10px; text-decoration: none; padding: 16px 30px;
-            border-radius: 50px; transition: 0.3s; font-weight: 600; cursor: pointer; border: none;
+            gap: 12px; text-decoration: none; padding: 18px 35px;
+            border-radius: 50px; font-weight: 600; cursor: pointer; transition: 0.3s;
         }
         .btn-wa { background: var(--wa-green); color: white; }
         .btn-tg { background: var(--tg-blue); color: white; }
-        .btn-outline { border: 1px solid var(--teal); color: var(--teal); background: transparent; }
+        .btn-outline { border: 1px solid var(--teal); color: var(--teal); }
 
-        .location-info {
-            padding: 60px 20px;
-            background: linear-gradient(180deg, var(--deep) 0%, #1e293b 100%);
-            text-align: center;
-        }
-
+        .location-box { display: flex; justify-content: center; gap: 50px; margin-top: 40px; }
+        .loc-item i { font-size: 2.2rem; color: var(--teal); margin-bottom: 10px; }
+        
         @media (max-width: 768px) {
             .energy-grid { grid-template-columns: 1fr; }
             .center-orb { margin: 20px auto; order: -1; }
+            .location-box { flex-direction: column; gap: 30px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
             <div class="concept-title">Путь к себе</div>
-            <div class="profile-circle">
-                <img src="my-photo.jpg" alt="Вика Кокурина">
+            
+            <div class="hero-intro">
+                Ты можешь жить без тревоги, внутреннего напряжения и постоянных сомнений.<br><br>
+                Я помогаю вернуться в состояние, где есть ясность, спокойствие и ощущение «я на своём месте».
             </div>
+
+            <div class="profile-circle"><img src="my-photo.jpg" alt="Вика Кокурина"></div>
             <div class="hero-name">Вика Кокурина</div>
-            <div style="color:var(--teal); font-size: 0.9rem; margin-top: 5px; letter-spacing: 2px; font-weight: 400;">ЭНЕРГОКОУЧ • АСТРОЛОГ</div>
+            <div style="color: var(--teal); margin-top: 10px; letter-spacing: 2px;">ЭНЕРГОКОУЧ • АСТРОЛОГ</div>
         </div>
     </section>
 
     <!-- АФФИРМАЦИИ -->
-    <section class="affirmation-block">
-        «Я разрешаю себе быть собой. <br>
-        Я доверяю своему пути. <br>
-        Я есть свет, энергия и безграничные возможности».
+    <section class="content-section">
+        <div class="affirmation-text">
+            «Я разрешаю себе быть собой. <br>
+            Я доверяю своему пути. <br>
+            Я есть свет, энергия и безграничные возможности».
+        </div>
     </section>
 
-    <section class="text-block">
-        <h2>Если ты сейчас:</h2>
-        <ul class="list-items">
-            <li>чувствуешь тревогу без причины</li>
-            <li>не понимаешь, чего хочешь</li>
-            <li>устала от внутреннего напряжения</li>
-            <li>как будто живёшь не свою жизнь</li>
-            <li>много думаешь, но нет ясности</li>
+    <!-- ТЕКСТОВЫЙ БЛОК -->
+    <section class="content-section">
+        <h2 class="section-title">Если ты сейчас:</h2>
+        <div style="text-align: left; display: inline-block; font-size: 1.2rem; line-height: 2;">
+            — чувствуешь тревогу без причины <br>
+            — не понимаешь, чего хочешь <br>
+            — устала от внутреннего напряжения <br>
+            — как будто живёшь не свою жизнь <br>
+            — много думаешь, но нет ясности
+        </div>
+    </section>
+
+    <!-- МЕДИТАЦИЯ -->
+    <section class="content-section" style="background: rgba(139, 92, 246, 0.05); border-radius: 100px 0;">
+        <h2 class="section-title">Твоя пауза</h2>
+        <p style="margin-bottom: 30px; opacity: 0.8;">Закрой глаза, сделай вдох и просто послушай этот голос...</p>
+        <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 50px; display: inline-block;">
+            <i class="fas fa-play-circle" style="font-size: 3rem; color: var(--teal); cursor: pointer;"></i>
+            <span style="margin-left: 15px; vertical-align: middle;">Медитация «Принятие»</span>
+        </div>
+    </section>
+
+    <!-- ЧТО ПОЛУЧИТ КЛИЕНТ -->
+    <section class="content-section">
+        <h2 class="section-title">Результат нашей встречи</h2>
+        <ul class="result-list">
+            <li><i class="fas fa-check-circle"></i> <span><b>Ясность.</b> Ты поймешь, куда двигаться дальше и какие шаги предпринять прямо сейчас.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><b>Энергия.</b> Уйдет фоновое напряжение, освободив ресурс для жизни и творчества.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><b>Опора.</b> Ты обретешь внутренний фундамент и уверенность в своих решениях.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><b>Инструменты.</b> Практики, которые останутся с тобой и помогут поддерживать состояние.</span></li>
         </ul>
     </section>
 
     <!-- УСЛУГИ -->
     <section class="energy-section">
+        <h2 class="section-title">Методы работы</h2>
         <div class="energy-grid">
             <div class="side">
                 <div class="service-card" onclick="toggleCard(this)">
-                    <h3>ЭНЕРГОТЕРАПИЯ <i class="fas fa-chevron-down" style="font-size:0.7rem; float:right;"></i></h3>
-                    <p style="font-size:0.85rem; opacity:0.7;">Снимаем блоки и возвращаем ресурс.</p>
+                    <h3>ЭНЕРГОТЕРАПИЯ <i class="fas fa-chevron-down" style="font-size:0.8rem; float:right;"></i></h3>
                     <div class="card-detailed">
                         Глубокая работа по методу Тани Соло. Использую расстановочные фигуры и заместителей для точной проработки вашего состояния на уровне тела и подсознания.
                     </div>
                 </div>
                 <div class="service-card" onclick="toggleCard(this)">
-                    <h3>АСТРОЛОГИЯ <i class="fas fa-chevron-down" style="font-size:0.7rem; float:right;"></i></h3>
-                    <p style="font-size:0.85rem; opacity:0.7;">Глубокое понимание себя.</p>
+                    <h3>АСТРОЛОГИЯ <i class="fas fa-chevron-down" style="font-size:0.8rem; float:right;"></i></h3>
                     <div class="card-detailed">
                         Разбор натальной карты: таланты, финансы, предназначение. Вы получаете четкую карту своей личности и векторов развития.
                     </div>
@@ -223,15 +234,13 @@
             <div class="center-orb">Я ЕСТЬ</div>
             <div class="side">
                 <div class="service-card" onclick="toggleCard(this)">
-                    <h3>МАК-СЕССИЯ <i class="fas fa-chevron-down" style="font-size:0.7rem; float:right;"></i></h3>
-                    <p style="font-size:0.85rem; opacity:0.7;">Ответы внутри вас.</p>
+                    <h3>МАК-СЕССИЯ <i class="fas fa-chevron-down" style="font-size:0.8rem; float:right;"></i></h3>
                     <div class="card-detailed">
-                        Работа с подсознанием через метафорические карты. Помогает увидеть выход из тупика и принять верное решение.
+                        Работа с подсознанием через образы. Помогает увидеть выход из тупика и принять верное решение без сопротивления ума.
                     </div>
                 </div>
                 <div class="service-card" onclick="toggleCard(this)">
-                    <h3>ЦИФРОВАЯ ПСИХОЛОГИЯ <i class="fas fa-chevron-down" style="font-size:0.7rem; float:right;"></i></h3>
-                    <p style="font-size:0.85rem; opacity:0.7;">Вектор вашей реализации.</p>
+                    <h3>ЦИФРОВАЯ ПСИХОЛОГИЯ <i class="fas fa-chevron-down" style="font-size:0.8rem; float:right;"></i></h3>
                     <div class="card-detailed">
                         Расчет сильных сторон по дате рождения. Дает понимание ваших врожденных настроек и способов достижения успеха.
                     </div>
@@ -241,76 +250,53 @@
         <svg id="energy-svg" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1;"></svg>
     </section>
 
-    <!-- КАРТЫ (БЛОК-ЗАГЛУШКА) -->
-    <section class="cards-preview">
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--teal);">Авторская колода «Планеты»</h2>
-        <p style="margin: 20px auto; max-width: 600px; opacity: 0.8;">Мой эксклюзивный инструмент для глубокой диагностики вашего состояния через энергию планет. Скоро здесь появится возможность познакомиться с ними ближе.</p>
-        <div style="display:flex; justify-content:center; gap:20px; opacity:0.3;">
-            <div style="width:80px; height:120px; border:1px solid white; border-radius:10px;"></div>
-            <div style="width:80px; height:120px; border:1px solid white; border-radius:10px;"></div>
-            <div style="width:80px; height:120px; border:1px solid white; border-radius:10px;"></div>
-        </div>
-    </section>
-
     <!-- ПАКЕТЫ -->
-    <section class="text-block">
-        <h2 style="font-size: 2rem;">Пакеты участия</h2>
+    <section class="content-section">
+        <h2 class="section-title">Пакеты участия</h2>
         <div class="price-grid">
             <div class="price-card">
                 <h3>LIGHT</h3>
                 <span class="price-val">9 000 ₽</span>
-                <p style="font-size:0.85rem; opacity:0.8;">Астроразбор + Цифровая психология. Весь потенциал вашей личности.</p>
+                <p class="price-desc">Астроразбор + Цифровая психология.<br>Полный портрет вашей личности.</p>
+                <a href="https://wa.me/79080288580" class="btn-main btn-outline">Выбрать</a>
             </div>
             <div class="price-card best">
                 <h3>BASE</h3>
                 <span class="price-val">14 000 ₽</span>
-                <p style="font-size:0.85rem; opacity:0.8;">Астроразбор + Полная Цифровая психология + 1 Энергосессия (Solo метод).</p>
+                <p class="price-desc">Астроразбор + Полная Цифровая психология + 1 Энергосессия (Solo метод).</p>
+                <a href="https://wa.me/79080288580" class="btn-main btn-wa">Начать путь</a>
             </div>
             <div class="price-card">
                 <h3>PRO</h3>
                 <span class="price-val">18 000 ₽</span>
-                <p style="font-size:0.85rem; opacity:0.8;">Трансформация: 3 Энергосессии (Solo метод) + МАК-разбор запроса.</p>
+                <p class="price-desc">Трансформация: 3 Энергосессии (Solo метод) + МАК-разбор запроса.</p>
+                <a href="https://wa.me/79080288580" class="btn-main btn-outline">Измениться</a>
             </div>
         </div>
     </section>
 
-    <!-- ОТЗЫВЫ -->
-    <section class="text-block" style="background: rgba(255,255,255,0.02); border-radius: 50px;">
-        <h2>Результаты</h2>
-        <div class="review-box">
-            <div class="review-card">"Фразы, которые я проговаривала за тобой — очень мощные. В конце почувствовала легкость во всем теле и прилив энергии."</div>
-            <div class="review-card">"Внутри как-то теплее стало. Я прям зарядилась энергией на вечер уж точно! Спасибо за сессию."</div>
-            <div class="review-card">"Круто и динамично провела терапию с крутыми смыслами и фигурами-заместителями. Благодарю!"</div>
-            <div class="review-card">"Все четко, вы чудесно все подметили. Прекраснейший разбор, всё понятно и ясно."</div>
+    <!-- КОНТАКТЫ -->
+    <section class="content-section" style="background: #0a0f1e;">
+        <h2 class="section-title">Где проходит работа?</h2>
+        <div class="location-box">
+            <div class="loc-item">
+                <i class="fas fa-globe"></i>
+                <p><b>ОНЛАЙН</b><br>из любой точки мира</p>
+            </div>
+            <div class="loc-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><b>ОЧНО</b><br>в уютном кабинете в Москве</p>
+            </div>
         </div>
-    </section>
+        
+        <div style="margin-top: 60px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="https://wa.me/79080288580" class="btn-main btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://t.me/kowiktori" class="btn-main btn-tg"><i class="fab fa-telegram-plane"></i> Telegram</a>
+        </div>
 
-    <!-- ЛОКАЦИЯ И КОНТАКТЫ (Красивое оформление) -->
-    <section class="location-info">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 20px;">Где проходит работа?</h2>
-            <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;">
-                <div>
-                    <i class="fas fa-globe-americas" style="font-size: 2rem; color: var(--teal); margin-bottom: 10px;"></i>
-                    <p><b>ОНЛАЙН</b><br>из любой точки мира</p>
-                </div>
-                <div style="width: 1px; background: rgba(255,255,255,0.1); height: 50px;"></div>
-                <div>
-                    <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--violet); margin-bottom: 10px;"></i>
-                    <p><b>ОЧНО</b><br>в уютном кабинете в Москве</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <a href="https://wa.me/79080288580" class="btn-main btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a href="https://t.me/kowiktori" class="btn-main btn-tg"><i class="fab fa-telegram-plane"></i> Telegram</a>
-            </div>
-            
-            <p style="margin-top: 40px; opacity: 0.6; font-size: 0.8rem;">
-                Создаем пространство вашей новой жизни вместе.<br>
-                <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank" style="color: var(--teal); text-decoration: none;">Недвижимость в Сочи и Москве</a>
-            </p>
-        </div>
+        <p style="margin-top: 50px; opacity: 0.5; font-size: 0.9rem;">
+            <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank" style="color: var(--teal); text-decoration: none;">Недвижимость в Сочи и Москве</a>
+        </p>
     </section>
 
     <script>
@@ -323,7 +309,6 @@
 
         function drawLines() {
             const svg = document.getElementById('energy-svg');
-            if (!svg) return;
             const orb = document.querySelector('.center-orb').getBoundingClientRect();
             const cards = document.querySelectorAll('.service-card');
             const svgRect = svg.getBoundingClientRect();
