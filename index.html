@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вика Кокурина | Путь к себе — Энерготерапевт, Астролог</title>
+    <meta name="description" content="Вика Кокурина — ваш проводник в мир ресурсного состояния. Энерготерапия, астрология, МАК и цифровая психология. Работа с блоками и страхами.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-violet: #8b5cf6;
+            --soft-pink: #fbcfe8;
+            --deep-purple: #2e1065;
+            --bg-light: #faf8ff;
+            --text-main: #1e1b4b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Hero --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at 50% 50%, #fff 0%, var(--soft-pink) 100%);
+            padding: 20px;
+        }
+
+        .domain-name {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            color: var(--primary-violet);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            color: var(--deep-purple);
+            margin-bottom: 20px;
+        }
+
+        .hero-photo-container {
+            width: 280px;
+            height: 380px;
+            border-radius: 140px 140px 0 0;
+            overflow: hidden;
+            border: 8px solid white;
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+            margin-bottom: 30px;
+            background: #eee; /* Заглушка, пока нет фото */
+        }
+
+        .hero-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- Energy Circle Section --- */
+        .energy-section {
+            padding: 100px 20px;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 80px;
+        }
+
+        .energy-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .central-orb {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, var(--primary-violet), var(--soft-pink));
+            border-radius: 50%;
+            box-shadow: 0 0 50px var(--primary-violet);
+            z-index: 10;
+            animation: breathe 4s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.15); filter: brightness(1.2); }
+        }
+
+        .service-block {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--soft-pink);
+            width: 220px;
+            transition: all 0.4s ease;
+            cursor: default;
+            z-index: 5;
+        }
+
+        .service-block:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+            border-color: var(--primary-violet);
+        }
+
+        .service-block h3 { color: var(--deep-purple); margin-bottom: 8px; }
+
+        /* Позиции блоков */
+        .block-1 { top: 10%; left: 10%; }
+        .block-2 { top: 10%; right: 10%; }
+        .block-3 { bottom: 15%; left: 5%; }
+        .block-4 { bottom: 15%; right: 5%; }
+
+        /* Линии (нити) */
+        svg.threads {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+        }
+
+        line {
+            stroke: var(--soft-pink);
+            stroke-width: 2;
+            stroke-dasharray: 5;
+            animation: flow 10s linear infinite;
+        }
+
+        @keyframes flow {
+            to { stroke-dashoffset: -100; }
+        }
+
+        /* --- Test Section --- */
+        .test-section {
+            background: var(--deep-purple);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #quiz-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .quiz-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: transparent;
+            border: 1px solid var(--soft-pink);
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .quiz-btn:hover { background: var(--primary-violet); }
+
+        /* --- Contacts & Footer --- */
+        .contacts {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            padding: 15px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .wa { background: #25D366; }
+        .tg { background: #0088cc; }
+        .inst { background: #E1306C; }
+
+        .realtor-banner {
+            margin-top: 100px;
+            background: #f1f5f9;
+            padding: 40px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+        }
+
+        .realtor-banner a {
+            color: var(--primary-violet);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .energy-container { height: auto; flex-direction: column; gap: 20px; }
+            .service-block { position: static; width: 100%; }
+            svg.threads { display: none; }
+            .central-orb { margin: 40px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="domain-name">ya-est.ru</div>
+        <div class="hero-photo-container">
+            <!-- ЗАМЕНИТЕ ИМЯ ФАЙЛА НИЖЕ НА ВАШЕ -->
+            <img src="my-photo.jpg" alt="Вика Кокурина">
+        </div>
+        <h1>Вика Кокурина</h1>
+        <p style="font-size: 1.3rem; font-style: italic; color: var(--deep-purple);">Путь к себе через осознанность</p>
+    </header>
+
+    <section class="energy-section">
+        <h2 class="section-title">С чем я работаю</h2>
+        <div class="energy-container">
+            <svg class="threads">
+                <line x1="50%" y1="50%" x2="20%" y2="20%" />
+                <line x1="50%" y1="50%" x2="80%" y2="20%" />
+                <line x1="50%" y1="50%" x2="15%" y2="80%" />
+                <line x1="50%" y1="50%" x2="85%" y2="80%" />
+            </svg>
+
+            <div class="central-orb">Я ЕСТЬ</div>
+
+            <div class="service-block block-1">
+                <h3>ЭНЕРГОТЕРАПИЯ</h3>
+                <p>Трансформация состояний, работа с внутренним ресурсом и светом.</p>
+            </div>
+
+            <div class="service-block block-2">
+                <h3>АСТРОЛОГИЯ</h3>
+                <p>Навигация по вашей судьбе через звезды и планетарные циклы.</p>
+            </div>
+
+            <div class="service-block block-3">
+                <h3>МАК</h3>
+                <p>Метафорические карты — диалог с вашим подсознанием через образы.</p>
+            </div>
+
+            <div class="service-block block-4">
+                <h3>ЦИФРОВАЯ ПСИХОЛОГИЯ</h3>
+                <p>Магия чисел и точный расчет вашего потенциала.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="test-section">
+        <h2>Что мешает вам сейчас?</h2>
+        <p>Пройдите короткий тест и получите ключ к своему состоянию</p>
+        
+        <div id="quiz-container">
+            <div id="question-text" style="font-size: 1.2rem; margin-bottom: 20px;">Как вы чувствуете себя по утрам?</div>
+            <div id="options">
+                <button class="quiz-btn" onclick="nextQuestion()">Нет сил вставать</button>
+                <button class="quiz-btn" onclick="nextQuestion()">Тревога о будущем</button>
+                <button class="quiz-btn" onclick="nextQuestion()">Всё хорошо, но нет радости</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts">
+        <h2 class="section-title">Мои контакты</h2>
+        <p>Готовы начать перемены? Напишите мне удобным способом:</p>
+        
+        <div class="social-links">
+            <a href="https://wa.me/79080288580" class="social-btn wa">WhatsApp</a>
+            <a href="https://t.me/kowiktori" class="social-btn tg">Telegram</a>
+            <a href="https://instagram.com/kowiktori" class="social-btn inst">Instagram</a>
+        </div>
+
+        <div class="realtor-banner">
+            <p>💡 <b>Кстати, об изменениях в жизни:</b> Иногда они начинаются с нового дома. <br>
+            Я также профессиональный риэлтор и помогу вам найти идеальное пространство.</p>
+            <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank">Моя презентация недвижимости →</a>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #999;">
+        &copy; 2024 Вика Кокурина | ya-est.ru
+    </footer>
+
+    <script>
+        let step = 0;
+        const questions = [
+            "Какая сфера сейчас больше всего беспокоит?",
+            "Что вы хотите почувствовать в итоге работы?"
+        ];
+        const finalMessage = "Ваш запрос понятен. Для глубокого разбора напишите мне слово 'ЭНЕРГИЯ' в любой мессенджер.";
+
+        function nextQuestion() {
+            step++;
+            if (step < questions.length) {
+                document.getElementById('question-text').innerText = questions[step];
+            } else {
+                document.getElementById('quiz-container').innerHTML = `
+                    <div style="font-size: 1.2rem; line-height: 1.6;">${finalMessage}</div>
+                    <a href="https://wa.me/79080288580" class="social-btn wa" style="display:inline-block; margin-top:20px;">Написать в WhatsApp</a>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
