@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вика Кокурина | Энергокоуч•Астролог</title>
+    <title>Вика Кокурина | Я ЗДЕСЬ</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -27,204 +27,222 @@
             scroll-behavior: smooth;
         }
 
-        /* --- ОБЩИЕ СТИЛИ СЕКЦИЙ --- */
-        .content-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
-        .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 40px; color: var(--teal); letter-spacing: 2px; }
-
-        /* --- HERO (Верхняя часть) --- */
+        /* --- HERO С ФОТОГРАФИЕЙ --- */
         .hero {
-            min-height: 80vh;
+            height: 100vh;
+            position: relative;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            background: radial-gradient(circle at center, #1e293b 0%, var(--deep) 100%);
+            background: url('your-main-photo.jpg') center/cover no-repeat; /* Вставьте ваше фото */
         }
-        .hero-intro { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; line-height: 1.6; font-style: italic; margin-bottom: 30px; opacity: 0.9; max-width: 700px; }
-        .profile-circle { width: 180px; height: 180px; border-radius: 50%; margin: 20px auto; border: 2px solid var(--violet); box-shadow: 0 0 30px var(--violet); overflow: hidden; }
-        .profile-circle img { width: 100%; height: 100%; object-fit: cover; }
-        .hero-name { font-size: 2rem; font-weight: 600; letter-spacing: 3px; }
 
-        /* --- МЕТОДЫ РАБОТЫ --- */
-        .methods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 30px; }
-        .method-item { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.2); }
-        .method-item h3 { color: var(--teal); margin-bottom: 15px; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--deep), transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        /* КНОПКА "Я ЗДЕСЬ" С АНИМАЦИЕЙ */
+        .btn-i-am-here {
+            background: transparent;
+            border: 2px solid var(--teal);
+            color: var(--teal);
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            text-transform: uppercase;
+            font-family: 'Cormorant Garamond', serif;
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 5px var(--teal); }
+            50% { box-shadow: 0 0 25px var(--teal), 0 0 50px var(--violet); }
+            100% { box-shadow: 0 0 5px var(--teal); }
+        }
+
+        .btn-i-am-here:hover {
+            background: var(--teal);
+            color: var(--deep);
+            transform: scale(1.1);
+        }
+
+        /* --- СЕКЦИИ --- */
+        .content-section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; margin-bottom: 50px; color: var(--teal); }
+
+        /* --- МЕТОДЫ (Сетка) --- */
+        .methods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .method-card { background: rgba(255,255,255,0.03); padding: 40px; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.2); transition: 0.3s; }
+        .method-card:hover { border-color: var(--teal); background: rgba(139, 92, 246, 0.05); }
 
         /* --- РЕЗУЛЬТАТЫ --- */
-        .result-list { text-align: left; max-width: 600px; margin: 0 auto; list-style: none; }
-        .result-list li { margin-bottom: 15px; font-size: 1.1rem; display: flex; gap: 15px; }
-        .result-list i { color: var(--teal); margin-top: 5px; }
+        .results-box { background: rgba(45, 212, 191, 0.05); padding: 60px 20px; border-radius: 50px; }
+        .res-list { list-style: none; max-width: 700px; margin: 0 auto; text-align: left; }
+        .res-list li { font-size: 1.2rem; margin-bottom: 20px; display: flex; gap: 20px; align-items: flex-start; }
+        .res-list i { color: var(--teal); font-size: 1.5rem; }
 
         /* --- ЦЕНЫ --- */
-        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .price-card { background: rgba(255,255,255,0.05); padding: 40px 30px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); }
-        .price-card.best { border: 2px solid var(--violet); transform: scale(1.05); }
-        .price-val { font-size: 2.2rem; font-weight: 600; color: var(--teal); display: block; margin: 15px 0; }
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .price-card { padding: 50px 30px; border-radius: 40px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+        .price-card.featured { border: 2px solid var(--violet); background: rgba(139, 92, 246, 0.07); transform: scale(1.05); }
 
-        /* --- АФФИРМАЦИИ --- */
-        .aff-box { background: rgba(139, 92, 246, 0.1); padding: 40px; border-radius: 40px; border-left: 4px solid var(--violet); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; line-height: 1.8; text-align: left; max-height: 400px; overflow-y: auto; }
+        /* --- КАРТА ДНЯ (АФФИРМАЦИИ ПО СФЕРАМ) --- */
+        .card-zone { margin-top: 50px; }
+        .category-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+        .tab-btn { background: transparent; border: 1px solid var(--violet); color: white; padding: 10px 20px; cursor: pointer; border-radius: 20px; }
+        .tab-btn.active { background: var(--violet); }
 
-        /* --- КАРТА ДНЯ (Механика) --- */
-        .card-container { perspective: 1000px; width: 200px; height: 300px; margin: 40px auto; cursor: pointer; }
+        .magic-card { 
+            width: 280px; height: 400px; margin: 0 auto; perspective: 1000px; cursor: pointer;
+        }
         .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
-        .card-container.flipped .card-inner { transform: rotateY(180deg); }
-        .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 15px; display: flex; align-items: center; justify-content: center; padding: 20px; text-align: center; }
-        .card-front { background: linear-gradient(45deg, var(--violet), var(--teal)); border: 3px solid white; font-weight: bold; }
-        .card-back { background: #f8fafc; color: var(--deep); transform: rotateY(180deg); border: 3px solid var(--teal); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; }
+        .magic-card.is-flipped .card-inner { transform: rotateY(180deg); }
+        .card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; display: flex; align-items: center; justify-content: center; padding: 30px; }
+        .card-front { background: linear-gradient(135deg, var(--deep), var(--violet)); border: 2px solid var(--teal); font-size: 1.2rem; letter-spacing: 2px; }
+        .card-back { background: #fff; color: var(--deep); transform: rotateY(180deg); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; text-align: center; border: 5px double var(--teal); }
 
-        /* --- КНОПКИ --- */
-        .btn-main { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; padding: 15px 30px; border-radius: 50px; font-weight: 600; transition: 0.3s; margin: 10px; }
-        .btn-wa { background: var(--wa-green); color: white; }
-        .btn-tg { background: var(--tg-blue); color: white; }
+        /* --- КНОПКИ СВЯЗИ --- */
+        .contact-btn { display: inline-flex; align-items: center; gap: 15px; padding: 20px 40px; border-radius: 50px; text-decoration: none; color: white; font-weight: 600; margin: 10px; transition: 0.3s; }
+        .btn-telegram { background: var(--tg-blue); }
+        .btn-whatsapp { background: var(--wa-green); }
 
-        @media (max-width: 768px) { .price-card.best { transform: none; } }
     </style>
 </head>
 <body>
 
-    <!-- 1. ВЕРХНЯЯ ЧАСТЬ -->
+    <!-- HERO С ФОТО И КНОПКОЙ -->
     <section class="hero">
-        <div class="hero-intro">
-            «Я разрешаю себе быть собой. Я доверяю своему пути. <br>
-            Я есть свет, энергия и безграничные возможности»
+        <div class="hero-content">
+            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; margin-bottom: 20px;">Вика Кокурина</h1>
+            <button class="btn-i-am-here" onclick="document.getElementById('methods').scrollIntoView()">Я ЗДЕСЬ</button>
         </div>
-        <div class="profile-circle"><img src="my-photo.jpg" alt="Вика Кокурина"></div>
-        <h1 class="hero-name">Вика Кокурина</h1>
-        <p style="color: var(--teal); margin-top: 10px; letter-spacing: 2px;">ЭНЕРГОКОУЧ • АСТРОЛОГ</p>
     </section>
 
-    <!-- 2. МЕТОДЫ РАБОТЫ -->
-    <section class="content-section">
+    <!-- МЕТОДЫ РАБОТЫ -->
+    <section class="content-section" id="methods">
         <h2 class="section-title">Методы работы</h2>
         <div class="methods-grid">
-            <div class="method-item">
+            <div class="method-card">
                 <h3>Энерготерапия</h3>
-                <p>Глубокая работа по методу Тани Соло с использованием расстановочных фигур.</p>
+                <p>Метод Тани Соло. Работа с полем, фигурами и вашим внутренним состоянием.</p>
             </div>
-            <div class="method-item">
+            <div class="method-card">
                 <h3>Астрология</h3>
-                <p>Натальная карта как путеводитель по вашим талантам и финансам.</p>
+                <p>Ваша натальная карта как ДНК вашей судьбы и возможностей.</p>
             </div>
-            <div class="method-item">
+            <div class="method-card">
                 <h3>Цифровая психология</h3>
-                <p>Раскрытие потенциала через врожденные настройки даты рождения.</p>
+                <p>Точный расчет ваших стратегий успеха по дате рождения.</p>
             </div>
         </div>
     </section>
 
-    <!-- 3. РЕЗУЛЬТАТЫ -->
-    <section class="content-section" style="background: rgba(45, 212, 191, 0.05);">
-        <h2 class="section-title">Результат нашей встречи</h2>
-        <ul class="result-list">
-            <li><i class="fas fa-star"></i> <span>Состояние ясности и понимание своих истинных целей.</span></li>
-            <li><i class="fas fa-star"></i> <span>Освобождение от фоновой тревоги и зажимов в теле.</span></li>
-            <li><i class="fas fa-star"></i> <span>Внутренняя опора, которая не зависит от внешних обстоятельств.</span></li>
-            <li><i class="fas fa-star"></i> <span>Четкий план действий, согласованный с вашей энергией.</span></li>
-        </ul>
+    <!-- РЕЗУЛЬТАТЫ -->
+    <section class="content-section">
+        <div class="results-box">
+            <h2 class="section-title">Что вы получите</h2>
+            <ul class="res-list">
+                <li><i class="fas fa-check"></i> <span>Полное высвобождение заблокированной энергии.</span></li>
+                <li><i class="fas fa-check"></i> <span>Ясное видение своего пути без чужих ожиданий.</span></li>
+                <li><i class="fas fa-check"></i> <span>Состояние «в потоке», где всё случается наилучшим образом.</span></li>
+                <li><i class="fas fa-check"></i> <span>Конкретные инструменты для самоподдержки каждый день.</span></li>
+            </ul>
+        </div>
     </section>
 
-    <!-- 4. ЦЕНЫ-ПАКЕТЫ -->
+    <!-- ЦЕНЫ -->
     <section class="content-section">
-        <h2 class="section-title">Варианты участия</h2>
+        <h2 class="section-title">Стоимость участия</h2>
         <div class="price-grid">
             <div class="price-card">
                 <h3>LIGHT</h3>
-                <span class="price-val">9 000 ₽</span>
-                <p>Астроразбор + Цифровая психология. Ваш личный фундамент.</p>
+                <p style="font-size: 2rem; color: var(--teal); margin: 20px 0;">9 000 ₽</p>
+                <p>Разбор личности (Астро + Цифра)</p>
             </div>
-            <div class="price-card best">
+            <div class="price-card featured">
                 <h3>BASE</h3>
-                <span class="price-val">14 000 ₽</span>
-                <p>Портрет личности + 1 глубокая Энергосессия (Solo метод).</p>
+                <p style="font-size: 2rem; color: var(--teal); margin: 20px 0;">14 000 ₽</p>
+                <p>Разбор + 1 Энергосессия</p>
             </div>
             <div class="price-card">
                 <h3>PRO</h3>
-                <span class="price-val">18 000 ₽</span>
-                <p>3 Энергосессии + МАК-разбор. Полная трансформация запроса.</p>
+                <p style="font-size: 2rem; color: var(--teal); margin: 20px 0;">18 000 ₽</p>
+                <p>3 сессии + МАК-коучинг</p>
             </div>
         </div>
     </section>
 
-    <!-- 5. АВТОРСКИЕ ИНСТРУМЕНТЫ -->
+    <!-- АВТОРСКИЕ ИНСТРУМЕНТЫ (АФФИРМАЦИИ-КАРТЫ) -->
     <section class="content-section">
-        <h2 class="section-title">Авторские инструменты</h2>
+        <h2 class="section-title">Твое послание</h2>
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="setCategory('love', this)">Любовь</button>
+            <button class="tab-btn" onclick="setCategory('money', this)">Деньги</button>
+            <button class="tab-btn" onclick="setCategory('state', this)">Состояние</button>
+        </div>
+
+        <div class="magic-card" id="mainCard" onclick="flipCard()">
+            <div class="card-inner">
+                <div class="card-face card-front">УЗНАТЬ СВОЮ АФФИРМАЦИЮ</div>
+                <div class="card-back" id="affirmationText">Сначала выбери сферу...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ГДЕ ПРОХОДИТ И НЕДВИЖИМОСТЬ -->
+    <section class="content-section">
+        <h2 class="section-title">Связаться со мной</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 40px;">Очно в Москве / Онлайн по всему миру</p>
         
-        <h3 style="margin-bottom: 20px; font-weight: 400;">Мои Аффирмации</h3>
-        <div class="aff-box">
-            <!-- Здесь текст из вашего файла affirmations.html -->
-            Я открываюсь потоку изобилия... <br>
-            Каждый мой вдох наполняет меня силой... <br>
-            Мой мир заботится обо мне... <br>
-            Я ценность по праву рождения... <br>
-            <i>(Весь ваш текст из файла будет здесь)</i>
-        </div>
+        <a href="https://t.me/kowiktori" class="contact-btn btn-telegram"><i class="fab fa-telegram"></i> Telegram</a>
+        <a href="https://wa.me/79080288580" class="contact-btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
 
-        <div style="margin-top: 60px;">
-            <h3 style="margin-bottom: 10px; font-weight: 400;">Карта дня</h3>
-            <p style="opacity: 0.7;">Сформулируй запрос и коснись карты</p>
-            <div class="card-container" onclick="drawCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">ПОЛУЧИТЬ ПОСЛАНИЕ</div>
-                    <div class="card-back" id="card-text">Твое послание здесь...</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. КАК И ГДЕ ПРОХОДИТ РАБОТА -->
-    <section class="content-section">
-        <h2 class="section-title">Как проходит работа?</h2>
-        <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;">
-            <div><i class="fas fa-video" style="font-size: 2rem; color: var(--teal);"></i><p>Онлайн (Zoom/WA)</p></div>
-            <div><i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--teal);"></i><p>Очно в Москве</p></div>
-        </div>
-
-        <a href="https://t.me/kowiktori" class="btn-main btn-tg"><i class="fab fa-telegram-plane"></i> Написать в Telegram</a>
-        <a href="https://wa.me/79080288580" class="btn-main btn-wa"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
-
-        <!-- ФИНАЛЬНАЯ ФРАЗА -->
-        <div style="margin-top: 80px; padding: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p style="font-style: italic; opacity: 0.8; line-height: 1.6;">
-                Если тебе нужна по-настоящему глубокая трансформация, начни её со смены своего пространства. 
-                Найди свой идеальный дом здесь:
-            </p>
-            <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank" style="color: var(--teal); text-decoration: underline; display: block; margin-top: 15px;">Моя недвижимость в Сочи и Москве</a>
+        <div style="margin-top: 100px; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 50px;">
+            <p>Если нужна прямая глубокая трансформация — начни со смены пространства.</p>
+            <a href="https://v0-realtor-landing-page-eight.vercel.app/" style="color: var(--teal); font-size: 1.5rem; text-decoration: none; display: block; margin-top: 20px;">
+                НЕДВИЖИМОСТЬ В МОСКВЕ <i class="fas fa-external-link-alt" style="font-size: 1rem;"></i>
+            </a>
         </div>
     </section>
 
     <script>
-        const messages = [
-            "Сегодня идеальный день для начала нового",
-            "Доверься своей интуиции, она знает путь",
-            "Твоя сила внутри, просто разреши ей быть",
-            "Все ответы уже есть в тебе",
-            "Замедлись. Истина в тишине",
-            "Ты под защитой Вселенной",
-            "Действуй из любви, а не из страха",
-            "Твой запрос уже решается наилучшим образом",
-            "Сфокусируйся на благодарности",
-            "Сегодня случится маленькое чудо",
-            "Отпусти то, что больше не служит тебе",
-            "Ты — творец своей реальности",
-            "Просто дыши. Ты на своем месте",
-            "Мир зеркалит твое внутреннее состояние",
-            "Твои возможности безграничны",
-            "Слушай сердце, а не шум вокруг",
-            "Пришло время заявить о себе",
-            "Изобилие — это твое естественное состояние",
-            "Ты ценность просто потому, что ты есть",
-            "Верь в себя так же, как я верю в тебя"
-        ];
+        const data = {
+            love: ["Я открыта для любви и принятия", "Мои отношения полны гармонии", "Я люблю и любима"],
+            money: ["Деньги приходят ко мне легко", "Я — магнит для изобилия", "Мой доход постоянно растет"],
+            state: ["Я здесь и сейчас", "Внутри меня безграничный покой", "Я доверяю своему пути"]
+        };
 
-        function drawCard(container) {
-            if (!container.classList.contains('flipped')) {
-                const randomMsg = messages[Math.floor(Math.random() * messages.length)];
-                document.getElementById('card-text').innerText = randomMsg;
-                container.classList.add('flipped');
+        let currentCategory = 'love';
+
+        function setCategory(cat, el) {
+            currentCategory = cat;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('mainCard').classList.remove('is-flipped');
+        }
+
+        function flipCard() {
+            const card = document.getElementById('mainCard');
+            if(!card.classList.contains('is-flipped')) {
+                const list = data[currentCategory];
+                const random = list[Math.floor(Math.random() * list.length)];
+                document.getElementById('affirmationText').innerText = random;
+                card.classList.add('is-flipped');
             } else {
-                container.classList.remove('flipped');
+                card.classList.remove('is-flipped');
             }
         }
     </script>
