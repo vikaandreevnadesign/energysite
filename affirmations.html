@@ -3,63 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Аффирмации дня — Вика Кокурина</title>
+<title>Аффирмации — Тёмная версия | Вика Кокурина</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:#F6F2ED;font-family:'Jost',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.bg{position:fixed;inset:0;background:
-  radial-gradient(ellipse 55% 45% at 15% 15%,rgba(210,185,240,0.35) 0%,transparent 60%),
-  radial-gradient(ellipse 45% 55% at 88% 88%,rgba(225,205,180,0.35) 0%,transparent 60%),
-  radial-gradient(ellipse 30% 40% at 80% 20%,rgba(240,220,200,0.25) 0%,transparent 60%)}
+body{background:#0a0814;font-family:'Jost',sans-serif;color:#e8dfd0;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.bg{position:fixed;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 20%,rgba(138,90,180,0.18) 0%,transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 80%,rgba(90,140,180,0.14) 0%,transparent 70%),
+    radial-gradient(ellipse 40% 60% at 50% 50%,rgba(180,120,80,0.08) 0%,transparent 80%)}
+.stars{position:fixed;inset:0;z-index:0;
+  background-image:
+    radial-gradient(1px 1px at 15% 20%,rgba(255,255,255,0.4) 0%,transparent 100%),
+    radial-gradient(1px 1px at 35% 60%,rgba(255,255,255,0.3) 0%,transparent 100%),
+    radial-gradient(1px 1px at 65% 15%,rgba(255,255,255,0.4) 0%,transparent 100%),
+    radial-gradient(1px 1px at 80% 45%,rgba(255,255,255,0.25) 0%,transparent 100%),
+    radial-gradient(1px 1px at 50% 80%,rgba(255,255,255,0.35) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 90% 10%,rgba(255,255,255,0.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 10% 70%,rgba(255,255,255,0.3) 0%,transparent 100%),
+    radial-gradient(1px 1px at 70% 90%,rgba(255,255,255,0.2) 0%,transparent 100%)}
 .wrap{position:relative;z-index:1;max-width:460px;width:100%;padding:36px 22px;text-align:center}
-.eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(130,90,175,0.5);margin-bottom:14px}
-h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#3a2d4a;line-height:1.3;margin-bottom:8px}
-h1 em{font-style:italic;color:#7B4FA0}
-.sub{font-size:13px;color:rgba(80,60,100,0.55);margin-bottom:26px;font-weight:300;line-height:1.6}
+.eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(200,170,230,0.6);margin-bottom:14px}
+h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#f0e8d8;line-height:1.3;margin-bottom:8px}
+h1 em{font-style:italic;color:#c9a8e8}
+.sub{font-size:13px;color:rgba(220,210,195,0.55);margin-bottom:26px;font-weight:300;line-height:1.6}
 
 /* CATEGORIES */
 .cats{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:26px}
-.cat{padding:7px 15px;border-radius:30px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.22s;border:1px solid rgba(160,120,210,0.3);background:transparent;color:rgba(100,70,140,0.7);font-family:'Jost',sans-serif}
-.cat.active{background:linear-gradient(135deg,#7B4FA0,#9B6FC0);border-color:transparent;color:#fff;box-shadow:0 4px 16px rgba(123,79,160,0.3)}
+.cat{padding:7px 15px;border-radius:30px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.22s;border:1px solid rgba(180,130,220,0.25);background:transparent;color:rgba(200,160,240,0.6);font-family:'Jost',sans-serif}
+.cat.active{background:linear-gradient(135deg,rgba(140,90,200,0.4),rgba(80,110,180,0.35));border-color:rgba(180,130,240,0.5);color:#e0d0f8;box-shadow:0 4px 16px rgba(120,70,200,0.25)}
+.cat:hover{border-color:rgba(180,130,240,0.4);color:#d8c8f0}
 
 /* CARD */
 .card{
-  background:linear-gradient(145deg,#fffaf5,#f7eefb);
-  border:1px solid rgba(180,145,220,0.22);
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(180,140,220,0.2);
   border-radius:24px;padding:40px 30px;
   min-height:200px;display:flex;flex-direction:column;
   align-items:center;justify-content:center;
   margin-bottom:24px;
-  box-shadow:0 8px 40px rgba(123,79,160,0.1),0 2px 8px rgba(123,79,160,0.05);
+  box-shadow:0 8px 40px rgba(0,0,0,0.4);
   position:relative;overflow:hidden;
   transition:opacity 0.35s,transform 0.35s;
+  backdrop-filter:blur(8px);
 }
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(160,110,210,0.5),transparent)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,150,240,0.4),transparent)}
 .card.fade{opacity:0;transform:scale(0.97)}
-.card-cat{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(140,100,185,0.55);margin-bottom:16px}
-.card-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1.75;color:#3a2d4a;font-style:italic;text-align:center}
-.idle-symbol{font-size:40px;opacity:0.3;animation:pulse 3s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:0.25;transform:scale(1)}50%{opacity:0.5;transform:scale(1.06)}}
-.idle-text{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:rgba(120,85,160,0.4);margin-top:10px}
+.card-cat{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,130,220,0.6);margin-bottom:14px}
+.card-text{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:300;line-height:1.75;color:#ede5d8;font-style:italic}
+.idle-symbol{font-size:36px;opacity:0.3;animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:0.2;transform:scale(1)}50%{opacity:0.5;transform:scale(1.06)}}
+.idle-text{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:rgba(200,160,240,0.4);margin-top:10px}
 
 /* BUTTONS */
 .btns{display:flex;flex-direction:column;align-items:center;gap:11px}
-.btn-main{background:linear-gradient(135deg,#7B4FA0,#9B6FC0);border:none;color:#fff;padding:15px 52px;border-radius:40px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.27s;box-shadow:0 8px 28px rgba(123,79,160,0.32)}
-.btn-main:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(123,79,160,0.44)}
+.btn-main{background:linear-gradient(135deg,rgba(140,90,200,0.35),rgba(80,110,180,0.3));border:1px solid rgba(180,140,230,0.4);color:#e0d0f8;padding:15px 52px;border-radius:40px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.27s;box-shadow:0 8px 28px rgba(0,0,0,0.3)}
+.btn-main:hover{background:linear-gradient(135deg,rgba(140,90,200,0.5),rgba(80,110,180,0.45));transform:translateY(-2px);box-shadow:0 12px 36px rgba(120,70,200,0.3)}
 .btn-row{display:flex;gap:9px}
-.btn-sec{background:transparent;border:1px solid rgba(160,120,210,0.3);color:rgba(100,70,140,0.7);padding:10px 24px;border-radius:30px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.22s}
-.btn-sec:hover{background:rgba(160,120,210,0.08);border-color:rgba(160,120,210,0.5)}
+.btn-sec{background:transparent;border:1px solid rgba(180,130,220,0.25);color:rgba(200,160,240,0.7);padding:10px 24px;border-radius:30px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.22s}
+.btn-sec:hover{background:rgba(180,130,220,0.1);border-color:rgba(180,130,240,0.5);color:#d8c8f0}
 
-/* MESSAGES */
-.saved-msg{margin-top:16px;background:rgba(255,253,250,0.85);border:1px solid rgba(180,150,220,0.2);border-radius:11px;padding:12px 18px;font-size:12px;color:rgba(100,70,140,0.65);line-height:1.6;display:none}
-.saved-msg strong{font-weight:500;color:rgba(100,70,140,0.85)}
-.counter{font-size:11px;color:rgba(130,90,175,0.38);margin-top:14px}
-.author{margin-top:24px;font-size:10px;letter-spacing:0.12em;color:rgba(120,90,150,0.3);text-transform:uppercase}
+.saved-msg{margin-top:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(180,140,220,0.2);border-radius:11px;padding:12px 18px;font-size:12px;color:rgba(200,170,230,0.65);line-height:1.6;display:none}
+.saved-msg strong{font-weight:500;color:rgba(200,170,230,0.9)}
+.counter{font-size:11px;color:rgba(180,140,210,0.35);margin-top:14px}
+.author{margin-top:24px;font-size:10px;letter-spacing:0.12em;color:rgba(160,130,190,0.3);text-transform:uppercase}
 </style>
 </head>
 <body>
 <div class="bg"></div>
+<div class="stars"></div>
 <div class="wrap">
   <div class="eyebrow">Вика Кокурина · Аффирмации</div>
   <h1>Послание<br><em>на сегодня</em></h1>
@@ -91,12 +104,12 @@ h1 em{font-style:italic;color:#7B4FA0}
     Сделай скрин и поделись с подругой, которой это нужно сегодня
   </div>
   <div class="counter" id="counter"></div>
-  <div class="author">@kowiktori · Энергориэлтор · Астролог</div>
+  <div class="author">@kowiktori · Энерготерапевт · Астролог</div>
 </div>
 
 <script>
 const D = {
-  money: { l:"💰 Деньги и изобилие", a:[
+  money:{l:"💰 Деньги и изобилие",a:[
     "Деньги приходят ко мне легко, часто и из разных источников",
     "Я достойна процветания и принимаю его с благодарностью",
     "Мои финансы растут, пока я занимаюсь любимым делом",
@@ -108,7 +121,7 @@ const D = {
     "Мои услуги ценны, и я принимаю достойную оплату за них",
     "Каждый день я создаю новые возможности для дохода"
   ]},
-  home: { l:"🏠 Дом и пространство", a:[
+  home:{l:"🏠 Дом и пространство",a:[
     "Мой идеальный дом уже существует и ждёт меня",
     "Я создаю пространство, наполненное теплом и любовью",
     "Каждый переезд — это шаг навстречу лучшей версии моей жизни",
@@ -120,7 +133,7 @@ const D = {
     "Я доверяю своей интуиции при выборе жилья",
     "Мой новый дом наполнен светом, покоем и радостью"
   ]},
-  conf: { l:"🌙 Уверенность и проявленность", a:[
+  conf:{l:"🌙 Уверенность и проявленность",a:[
     "Я разрешаю себе занимать место и быть видимой",
     "Мой голос важен. Мои слова нужны людям",
     "Я готова прямо сейчас — ждать идеального момента больше не нужно",
@@ -132,7 +145,7 @@ const D = {
     "Я достаточно знаю, чтобы помогать. Я готова",
     "Люди находят меня, потому что им нужно именно то, что я несу"
   ]},
-  energy: { l:"✨ Энергия и состояние", a:[
+  energy:{l:"✨ Энергия и состояние",a:[
     "Я наполнена энергией жизни и передаю её окружающим",
     "Моё тело мудро. Я слышу его и доверяю ему",
     "Я отпускаю то, что больше мне не служит, с лёгкостью и благодарностью",
@@ -145,41 +158,28 @@ const D = {
     "Мои границы — это любовь к себе. Я держу их с достоинством"
   ]}
 };
-
-const all = Object.entries(D).flatMap(([k,v]) => v.a.map(t => ({k, l:v.l, t})));
-let cat = 'all', shown = 0, last = null;
-
-function setCat(el) {
-  document.querySelectorAll('.cat').forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-  cat = el.dataset.cat;
-}
-
-function getPool() {
-  if (cat === 'all') return all;
-  const v = D[cat];
-  return v ? v.a.map(t => ({k:cat, l:v.l, t})) : all;
-}
-
-function generate() {
-  const pool = getPool();
-  const item = pool[Math.floor(Math.random() * pool.length)];
-  last = item; shown++;
-  const card = document.getElementById('card');
+const all=Object.entries(D).flatMap(([k,v])=>v.a.map(t=>({k,l:v.l,t})));
+let cat='all',shown=0,last=null;
+function setCat(el){document.querySelectorAll('.cat').forEach(c=>c.classList.remove('active'));el.classList.add('active');cat=el.dataset.cat}
+function getPool(){if(cat==='all')return all;const v=D[cat];return v?v.a.map(t=>({k:cat,l:v.l,t})):all}
+function generate(){
+  const pool=getPool();
+  const item=pool[Math.floor(Math.random()*pool.length)];
+  last=item;shown++;
+  const card=document.getElementById('card');
   card.classList.add('fade');
-  setTimeout(() => {
-    card.innerHTML = `<div class="card-cat">${item.l}</div><div class="card-text">${item.t}</div>`;
+  setTimeout(()=>{
+    card.innerHTML=`<div class="card-cat">${item.l}</div><div class="card-text">${item.t}</div>`;
     card.classList.remove('fade');
-  }, 320);
-  document.getElementById('counter').textContent = `Получено аффирмаций: ${shown}`;
-  document.getElementById('savedMsg').style.display = 'none';
+  },320);
+  document.getElementById('counter').textContent=`Получено аффирмаций: ${shown}`;
+  document.getElementById('savedMsg').style.display='none';
 }
-
-function saveAff() {
-  if (!last) { generate(); return; }
-  const m = document.getElementById('savedMsg');
-  m.style.display = 'block';
-  setTimeout(() => m.style.display = 'none', 4500);
+function saveAff(){
+  if(!last){generate();return}
+  const m=document.getElementById('savedMsg');
+  m.style.display='block';
+  setTimeout(()=>m.style.display='none',4500);
 }
 </script>
 </body>
