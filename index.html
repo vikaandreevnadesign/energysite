@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Вика Кокурина — энерготерапия</title>
+
+<meta name="description" content="Энерготерапия, астрология и работа с состоянием. Москва и онлайн.">
+<meta property="og:title" content="Вика Кокурина">
+<meta property="og:description" content="Ясность, энергия и решения">
+<meta property="og:image" content="https://your-domain.ru/preview.jpg">
+
+<link rel="icon" href="favicon.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+background: radial-gradient(circle at top, #1a0033, #000);
+}
+.glow {
+box-shadow: 0 0 20px rgba(168,85,247,0.5);
+transition: 0.3s;
+}
+.glow:hover {
+box-shadow: 0 0 40px rgba(168,85,247,0.9);
+transform: scale(1.03);
+}
+</style>
+</head>
+
+<body class="text-white font-sans">
+
+<section class="text-center py-20 px-6">
+<img src="images/photo.jpg" class="w-40 h-40 mx-auto rounded-full mb-6 border-4 border-purple-500 object-cover">
+
+<h1 class="text-4xl font-bold mb-4">Вика Кокурина</h1>
+
+<p class="text-gray-300 max-w-xl mx-auto">
+Энерготерапевт. Помогаю выйти из внутреннего тупика, обрести ясность и начать двигаться
+</p>
+
+<a href="https://wa.me/79080288580" class="mt-6 inline-block bg-purple-500 text-black px-6 py-3 rounded-xl font-semibold glow">
+Получить консультацию
+</a>
+</section>
+
+<section class="py-16 px-6 max-w-4xl mx-auto text-center">
+<h2 class="text-2xl text-purple-400 mb-6">Что такое энерготерапия</h2>
+
+<p class="text-gray-300">
+Работа с внутренним состоянием, блоками и энергией.  
+Ты возвращаешь ресурс, ясность и начинаешь действовать.
+</p>
+</section>
+
+<section class="text-center py-16 px-6">
+<h2 class="text-2xl text-purple-400 mb-6">Карта дня</h2>
+
+<button onclick="getCard()" class="bg-purple-500 text-black px-8 py-3 rounded-xl glow">
+Вытянуть карту
+</button>
+
+<div class="mt-8 p-6 max-w-md mx-auto border border-purple-500 rounded-xl glow">
+<p id="cardResult"></p>
+</div>
+</section>
+
+<script>
+const cards = [
+"Ты уже знаешь ответ",
+"Доверься себе",
+"Время действовать",
+"Отпусти контроль",
+"Ты готова",
+"Слушай себя"
+];
+
+function getCard() {
+const random = cards[Math.floor(Math.random() * cards.length)];
+document.getElementById("cardResult").innerText = random;
+}
+</script>
+
+</body>
+</html>
