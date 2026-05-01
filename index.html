@@ -12,7 +12,6 @@
             --violet: #8b5cf6;
             --teal: #2dd4bf;
             --deep: #0f172a;
-            --soft-pink: #fbcfe8;
             --text: #f8fafc;
         }
 
@@ -35,58 +34,61 @@
             justify-content: center;
             text-align: center;
             background: url('crystals.jpg') center/cover no-repeat;
+            padding: 20px;
         }
 
         .hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), var(--deep));
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), var(--deep));
         }
 
         .hero-content {
             position: relative;
             z-index: 10;
+            width: 100%;
         }
 
         .concept-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3rem, 10vw, 6rem);
-            letter-spacing: 15px;
+            font-size: clamp(2rem, 8vw, 5.5rem); /* Оптимизированный размер */
+            letter-spacing: 12px;
             text-transform: uppercase;
             font-weight: 300;
             margin-bottom: 10px;
-            opacity: 0.9;
+            white-space: nowrap; /* ЗАПРЕТ ПЕРЕНОСА */
         }
 
         .hero-name {
-            font-size: 1.5rem;
-            font-weight: 200;
-            letter-spacing: 5px;
+            font-size: 1.6rem;
+            font-weight: 600; /* СДЕЛАНО ЖИРНЕЕ */
+            letter-spacing: 3px;
             margin-top: 20px;
         }
 
         .hero-desc {
             color: var(--teal);
             font-size: 0.9rem;
-            margin-top: 5px;
+            margin-top: 8px;
             letter-spacing: 2px;
+            font-weight: 400;
         }
 
         .profile-circle {
             width: 220px;
             height: 220px;
             border-radius: 50%;
-            margin: 40px auto;
+            margin: 30px auto;
             position: relative;
             border: 2px solid rgba(255,255,255,0.2);
-            box-shadow: 0 0 30px var(--violet), inset 0 0 20px var(--violet);
+            box-shadow: 0 0 35px var(--violet);
             overflow: hidden;
         }
         .profile-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- ENERGY MAP (НИТИ) --- */
-        .energy-section { padding: 100px 20px; background: var(--deep); position: relative; }
+        /* --- ENERGY MAP --- */
+        .energy-section { padding: 80px 20px; background: var(--deep); position: relative; }
         
         .energy-canvas {
             position: absolute;
@@ -107,70 +109,95 @@
 
         .service-card {
             background: rgba(255,255,255,0.03);
-            padding: 30px;
+            padding: 25px;
             border-radius: 20px;
             border: 1px solid rgba(139, 92, 246, 0.2);
-            transition: 0.5s;
-            margin: 20px;
+            margin: 15px;
+            text-align: center;
         }
-        .service-card:hover { border-color: var(--teal); transform: translateY(-5px); }
 
         .center-orb {
-            width: 150px; height: 150px;
+            width: 130px; height: 130px;
             background: radial-gradient(circle, var(--violet), var(--teal));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            box-shadow: 0 0 60px var(--violet);
+            box-shadow: 0 0 50px var(--violet);
             animation: pulse 3s infinite;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 40px var(--violet); }
-            50% { transform: scale(1.1); box-shadow: 0 0 80px var(--teal); }
-            100% { transform: scale(1); box-shadow: 0 0 40px var(--violet); }
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
         }
 
-        /* --- TEST SECTION --- */
-        .test-section { padding: 100px 20px; background: #0a0f1e; text-align: center; }
+        /* --- TEST & GIFTS --- */
+        .test-section { padding: 80px 20px; background: #0a0f1e; text-align: center; }
         .quiz-box {
-            max-width: 700px;
+            max-width: 650px;
             margin: 40px auto;
-            background: rgba(255,255,255,0.05);
-            padding: 50px;
+            background: rgba(255,255,255,0.04);
+            padding: 40px;
             border-radius: 30px;
-            border: 1px solid var(--violet);
+            border: 1px solid rgba(139, 92, 246, 0.3);
         }
         .quiz-option {
-            display: block; width: 100%; padding: 15px; margin: 10px 0;
-            background: transparent; border: 1px solid rgba(255,255,255,0.2);
+            display: block; width: 100%; padding: 16px; margin: 12px 0;
+            background: transparent; border: 1px solid rgba(255,255,255,0.15);
             color: white; border-radius: 50px; cursor: pointer; transition: 0.3s;
+            font-size: 0.95rem;
         }
         .quiz-option:hover { background: var(--violet); border-color: transparent; }
 
-        /* --- AFFIRMATIONS & MEDITATION (Встроенные блоки) --- */
-        .project-block {
-            margin: 50px auto;
-            max-width: 900px;
-            border-radius: 40px;
-            overflow: hidden;
-            background: #fdfaf7; /* Светлый фон для контраста, как в ваших кодах */
-            color: #333;
+        .gift-header {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            margin: 60px 0 20px;
+            color: var(--teal);
+            text-align: center;
         }
 
-        /* --- REALTOR FOOTER --- */
+        .project-block {
+            margin: 20px auto 80px;
+            max-width: 900px;
+            border-radius: 30px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        /* --- FOOTER --- */
         .realtor-footer {
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: linear-gradient(to top, #1e293b, var(--deep));
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
+        .btn-main {
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--teal);
+            text-decoration: none;
+            border: 1px solid var(--teal);
+            padding: 16px 35px;
+            border-radius: 50px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+        .btn-main:hover { background: var(--teal); color: var(--deep); }
+
+        /* MOBILE ADJUSTMENTS */
         @media (max-width: 768px) {
+            .concept-title { letter-spacing: 6px; } /* Сужаем буквы на мобильных */
             .energy-grid { grid-template-columns: 1fr; }
-            .center-orb { margin: 40px auto; }
+            .center-orb { margin: 30px auto; order: -1; }
+            .hero { padding-top: 60px; }
+        }
+        @media (max-width: 480px) {
+            .concept-title { font-size: 1.8rem; letter-spacing: 4px; }
+            .hero-name { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -188,43 +215,39 @@
     </section>
 
     <section class="energy-section">
-        <h2 style="text-align:center; font-family:'Cormorant Garamond'; font-size: 3rem; margin-bottom: 50px;">Карта твоей трансформации</h2>
-        
+        <h2 style="text-align:center; font-family:'Cormorant Garamond'; font-size: 2.8rem; margin-bottom: 40px;">Карта трансформации</h2>
         <div class="energy-grid">
             <div class="side-services">
-                <div class="service-card" id="srv-1">
+                <div class="service-card">
                     <h3>ЭНЕРГОТЕРАПИЯ</h3>
-                    <p>Работа с состояниями и блоками.</p>
+                    <p style="opacity:0.7; font-size:0.9rem; margin-top:5px;">Работа с состояниями и блоками</p>
                 </div>
-                <div class="service-card" id="srv-2">
+                <div class="service-card">
                     <h3>АСТРОЛОГИЯ</h3>
-                    <p>Твой звездный путь и потенциал.</p>
+                    <p style="opacity:0.7; font-size:0.9rem; margin-top:5px;">Разбор натальной карты</p>
                 </div>
             </div>
 
             <div class="center-orb">Я ЕСТЬ</div>
 
             <div class="side-services">
-                <div class="service-card" id="srv-3">
+                <div class="service-card">
                     <h3>МАК</h3>
-                    <p>Метафорические карты для подсознания.</p>
+                    <p style="opacity:0.7; font-size:0.9rem; margin-top:5px;">Метафорические карты</p>
                 </div>
-                <div class="service-card" id="srv-4">
+                <div class="service-card">
                     <h3>ЦИФРОВАЯ ПСИХОЛОГИЯ</h3>
-                    <p>Твоя стратегия через числа.</p>
+                    <p style="opacity:0.7; font-size:0.9rem; margin-top:5px;">Стратегия реализации</p>
                 </div>
             </div>
         </div>
-        
-        <!-- Анимированные линии будут здесь через JS -->
         <svg class="energy-canvas" id="energy-svg"></svg>
     </section>
 
-    <!-- ТЕСТ -->
     <section class="test-section">
-        <h2 style="font-family:'Cormorant Garamond'; font-size: 2.5rem;">Узнай, что мешает тебе сейчас</h2>
+        <h2 style="font-family:'Cormorant Garamond'; font-size: 2.5rem;">Мини-тест состояния</h2>
         <div class="quiz-box" id="quiz">
-            <div id="q-text" style="font-size: 1.4rem; margin-bottom: 30px;">Что вы чувствуете чаще всего в последнее время?</div>
+            <div id="q-text" style="font-size: 1.2rem; margin-bottom: 25px; line-height: 1.5;">Что вы чувствуете чаще всего в последнее время?</div>
             <div id="q-options">
                 <button class="quiz-option" onclick="nextStep(0)">Постоянную усталость и апатию</button>
                 <button class="quiz-option" onclick="nextStep(1)">Тревогу и страх за будущее</button>
@@ -233,28 +256,26 @@
         </div>
     </section>
 
-    <!-- МЕДИТАЦИЯ (Встроенный интерфейс) -->
-    <section id="meditation" class="project-block">
-        <iframe src="meditation.html" style="width: 100%; height: 700px; border: none;"></iframe>
+    <!-- ПОДАРКИ -->
+    <h2 class="gift-header">Медитация для уверенности</h2>
+    <section class="project-block">
+        <iframe src="meditation.html" style="width: 100%; height: 650px; border: none;"></iframe>
     </section>
 
-    <!-- АФФИРМАЦИИ (Встроенный интерфейс) -->
-    <section id="affirmations" class="project-block">
-        <iframe src="affirmations.html" style="width: 100%; height: 700px; border: none;"></iframe>
+    <h2 class="gift-header">Аффирмации для вашего состояния</h2>
+    <section class="project-block">
+        <iframe src="affirmations.html" style="width: 100%; height: 650px; border: none;"></iframe>
     </section>
 
-    <!-- REALTOR -->
     <footer class="realtor-footer">
-        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 20px;">Хотите полностью изменить жизнь? Начните со своего пространства.</p>
-        <p>Я помогу вам найти дом, который станет местом вашей силы.</p>
-        <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank" style="display:inline-block; margin-top: 30px; color: var(--teal); text-decoration: none; border: 1px solid var(--teal); padding: 15px 30px; border-radius: 50px;">Презентация Энергориэлтора</a>
-        <div style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">
+        <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">Хотите, чтобы ваш дом стал местом силы? Помогу найти идеальное пространство.</p>
+        <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank" class="btn-main">Подбор недвижимости</a>
+        <div style="margin-top: 50px; font-size: 0.85rem; opacity: 0.5; letter-spacing: 1px;">
             @kowiktori • +79080288580 • ya-est.ru
         </div>
     </footer>
 
     <script>
-        // ЛОГИКА ТЕСТА
         const questions = [
             { t: "Где в теле вы чаще чувствуете зажим?", o: ["Горло (трудно говорить)", "Грудь (тяжело дышать)", "Живот (страх)"] },
             { t: "Чего вам не хватает для рывка?", o: ["Энергии и сил", "Понимания куда идти", "Уверенности в себе"] }
@@ -272,21 +293,24 @@
                 document.getElementById('q-options').innerHTML = html;
                 currentQ++;
             } else {
+                // Приветственное сообщение для WhatsApp
+                const message = encodeURIComponent("Здравствуйте, Виктория! Я с вашего сайта, хочу записаться на консультацию.");
+                const waLink = `https://wa.me/79080288580?text=${message}`;
+                
                 document.getElementById('quiz').innerHTML = `
-                    <h3 style="color:var(--teal)">Анализ завершен</h3>
-                    <p style="margin: 20px 0;">Ваша энергия сейчас требует очищения и фокуса. Начните с медитации ниже или напишите мне для личного разбора.</p>
-                    <a href="https://wa.me/79080288580" class="quiz-option" style="text-decoration:none; display:inline-block;">Записаться на консультацию</a>
+                    <h3 style="color:var(--teal); font-size: 1.8rem;">Анализ завершен</h3>
+                    <p style="margin: 20px 0; line-height: 1.6;">Вашей энергии нужен новый импульс. Послушайте медитацию ниже и напишите мне для записи на глубокий разбор.</p>
+                    <a href="${waLink}" class="btn-main" style="background:var(--violet); border:none; color:white;">Записаться в WhatsApp</a>
                 `;
             }
         }
 
-        // РИСОВАНИЕ ЛИНИЙ ЭНЕРГИИ
+        // Рисование линий
         function drawLines() {
             const svg = document.getElementById('energy-svg');
             const orb = document.querySelector('.center-orb').getBoundingClientRect();
             const cards = document.querySelectorAll('.service-card');
             const svgRect = svg.getBoundingClientRect();
-
             let linesHTML = "";
             cards.forEach(card => {
                 const rect = card.getBoundingClientRect();
@@ -294,24 +318,10 @@
                 const y1 = orb.top + orb.height / 2 - svgRect.top;
                 const x2 = rect.left + rect.width / 2 - svgRect.left;
                 const y2 = rect.top + rect.height / 2 - svgRect.top;
-
-                linesHTML += `
-                    <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" 
-                          stroke="url(#grad)" stroke-width="2" stroke-dasharray="5" opacity="0.5">
-                        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="5s" repeatCount="indefinite" />
-                    </line>`;
+                linesHTML += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(139, 92, 246, 0.3)" stroke-width="1" />`;
             });
-
-            svg.innerHTML = `
-                <defs>
-                    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:var(--violet);stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:var(--teal);stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                ${linesHTML}`;
+            svg.innerHTML = linesHTML;
         }
-
         window.addEventListener('load', drawLines);
         window.addEventListener('resize', drawLines);
     </script>
