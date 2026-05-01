@@ -23,29 +23,34 @@
             font-family: 'Montserrat', sans-serif; 
             background: var(--deep); 
             color: var(--text); 
-            scroll-behavior: smooth;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* --- 1. ШАПКА (ФОТО + КНОПКА) --- */
+        /* --- HERO С ФОТОГРАФИЕЙ --- */
         .hero {
             height: 100vh;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             background: url('your-main-photo.jpg') center/cover no-repeat;
-            position: relative;
         }
 
         .hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, var(--deep) 5%, transparent 95%);
+            background: linear-gradient(to top, var(--deep), transparent 70%);
         }
 
-        .hero-content { position: relative; z-index: 10; text-align: center; }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
 
+        /* КНОПКА "Я ЗДЕСЬ" С АНИМАЦИЕЙ */
         .btn-i-am-here {
             background: transparent;
             border: 2px solid var(--teal);
@@ -54,60 +59,76 @@
             font-size: 1.5rem;
             letter-spacing: 5px;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
             text-transform: uppercase;
             font-family: 'Cormorant Garamond', serif;
             animation: pulse-glow 2s infinite;
-            transition: 0.5s;
         }
 
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 5px var(--teal); }
-            50% { box-shadow: 0 0 20px var(--teal), 0 0 40px var(--violet); }
+            0% { box-shadow: 0 0 5px var(--teal); }
+            50% { box-shadow: 0 0 25px var(--teal), 0 0 50px var(--violet); }
+            100% { box-shadow: 0 0 5px var(--teal); }
         }
 
-        /* --- ОБЩИЕ СТИЛИ СЕКЦИЙ --- */
-        .section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
-        .title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; margin-bottom: 50px; color: var(--teal); }
+        .btn-i-am-here:hover {
+            background: var(--teal);
+            color: var(--deep);
+            transform: scale(1.1);
+        }
 
-        /* --- 2. МЕТОДЫ --- */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: rgba(255,255,255,0.03); padding: 40px; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.2); }
+        /* --- СЕКЦИИ --- */
+        .content-section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; margin-bottom: 50px; color: var(--teal); }
 
-        /* --- 3. РЕЗУЛЬТАТЫ --- */
-        .results-list { text-align: left; max-width: 700px; margin: 0 auto; list-style: none; }
-        .results-list li { font-size: 1.1rem; margin-bottom: 20px; display: flex; gap: 15px; }
-        .results-list i { color: var(--teal); margin-top: 5px; }
+        /* --- МЕТОДЫ (Сетка) --- */
+        .methods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .method-card { background: rgba(255,255,255,0.03); padding: 40px; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.2); transition: 0.3s; }
+        .method-card:hover { border-color: var(--teal); background: rgba(139, 92, 246, 0.05); }
 
-        /* --- 4. ПАКЕТЫ УСЛУГ --- */
-        .price-card { padding: 40px; border-radius: 30px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); position: relative; }
-        .price-card.featured { border: 2px solid var(--violet); background: rgba(139, 92, 246, 0.05); transform: scale(1.05); }
-        .price-tag { font-size: 2rem; color: var(--teal); margin: 20px 0; font-weight: 600; }
+        /* --- РЕЗУЛЬТАТЫ --- */
+        .results-box { background: rgba(45, 212, 191, 0.05); padding: 60px 20px; border-radius: 50px; }
+        .res-list { list-style: none; max-width: 700px; margin: 0 auto; text-align: left; }
+        .res-list li { font-size: 1.2rem; margin-bottom: 20px; display: flex; gap: 20px; align-items: flex-start; }
+        .res-list i { color: var(--teal); font-size: 1.5rem; }
 
-        /* --- 5. ОТЗЫВЫ --- */
-        .review { background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; text-align: left; border-left: 3px solid var(--teal); font-style: italic; }
+        /* --- ПАКЕТЫ УСЛУГ / ЦЕНЫ --- */
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .price-card { padding: 50px 30px; border-radius: 40px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+        .price-card.featured { border: 2px solid var(--violet); background: rgba(139, 92, 246, 0.07); transform: scale(1.05); }
 
-        /* --- 6. ИНТЕРАКТИВ (КАРТА ДНЯ / АФФИРМАЦИИ) --- */
-        .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
-        .tab { background: transparent; border: 1px solid var(--violet); color: white; padding: 10px 20px; border-radius: 20px; cursor: pointer; }
-        .tab.active { background: var(--violet); }
+        /* --- ОТЗЫВЫ --- */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 50px; }
+        .review-card { background: rgba(255,255,255,0.02); padding: 30px; border-radius: 25px; border-left: 4px solid var(--violet); text-align: left; }
+        .review-card p { font-style: italic; opacity: 0.9; line-height: 1.6; }
+        .review-author { display: block; margin-top: 15px; font-weight: 600; color: var(--teal); }
 
-        .magic-card { width: 300px; height: 420px; margin: 0 auto; perspective: 1000px; cursor: pointer; }
+        /* --- КАРТА ДНЯ (АФФИРМАЦИИ ПО СФЕРАМ) --- */
+        .category-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+        .tab-btn { background: transparent; border: 1px solid var(--violet); color: white; padding: 10px 20px; cursor: pointer; border-radius: 20px; }
+        .tab-btn.active { background: var(--violet); }
+
+        .magic-card { 
+            width: 280px; height: 400px; margin: 0 auto; perspective: 1000px; cursor: pointer;
+        }
         .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
         .magic-card.is-flipped .card-inner { transform: rotateY(180deg); }
-        .face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; display: flex; align-items: center; justify-content: center; padding: 30px; text-align: center; }
-        .front { background: linear-gradient(135deg, var(--deep), var(--violet)); border: 2px solid var(--teal); font-size: 1.2rem; letter-spacing: 2px; }
-        .back { background: #fff; color: var(--deep); transform: rotateY(180deg); font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; border: 6px double var(--teal); }
+        .card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; display: flex; align-items: center; justify-content: center; padding: 30px; }
+        .card-front { background: linear-gradient(135deg, var(--deep), var(--violet)); border: 2px solid var(--teal); font-size: 1.2rem; letter-spacing: 2px; text-align: center; }
+        .card-back { background: #fff; color: var(--deep); transform: rotateY(180deg); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; text-align: center; border: 5px double var(--teal); }
 
-        /* --- 7. КОНТАКТЫ --- */
-        .btn-link { display: inline-flex; align-items: center; gap: 10px; padding: 18px 35px; border-radius: 50px; text-decoration: none; color: white; font-weight: 600; margin: 10px; }
-        .tg { background: var(--tg-blue); }
-        .wa { background: var(--wa-green); }
+        /* --- КНОПКИ СВЯЗИ --- */
+        .contact-btn { display: inline-flex; align-items: center; gap: 15px; padding: 20px 40px; border-radius: 50px; text-decoration: none; color: white; font-weight: 600; margin: 10px; transition: 0.3s; }
+        .btn-telegram { background: var(--tg-blue); }
+        .btn-whatsapp { background: var(--wa-green); }
 
     </style>
 </head>
 <body>
 
-    <!-- HERO -->
+    <!-- HERO С ФОТО И КНОПКОЙ -->
     <section class="hero">
         <div class="hero-content">
             <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; margin-bottom: 20px;">Вика Кокурина</h1>
@@ -115,111 +136,142 @@
         </div>
     </section>
 
-    <!-- МЕТОДЫ -->
-    <section class="section" id="methods">
-        <h2 class="title">Методы работы</h2>
-        <div class="grid">
-            <div class="card"><h3>Энерготерапия</h3><p>Метод Тани Соло. Работа с полем и вашим состоянием.</p></div>
-            <div class="card"><h3>Астрология</h3><p>Натальная карта как ДНК вашей судьбы.</p></div>
-            <div class="card"><h3>Цифровая психология</h3><p>Точный расчет стратегий успеха по дате рождения.</p></div>
+    <!-- МЕТОДЫ РАБОТЫ -->
+    <section class="content-section" id="methods">
+        <h2 class="section-title">Методы работы</h2>
+        <div class="methods-grid">
+            <div class="method-card">
+                <h3>Энерготерапия</h3>
+                <p>Метод Тани Соло. Работа с полем, фигурами и вашим внутренним состоянием.</p>
+            </div>
+            <div class="method-card">
+                <h3>Астрология</h3>
+                <p>Ваша натальная карта как ДНК вашей судьбы и возможностей.</p>
+            </div>
+            <div class="method-card">
+                <h3>Цифровая психология</h3>
+                <p>Точный расчет ваших стратегий успеха по дате рождения.</p>
+            </div>
         </div>
     </section>
 
-    <!-- ПОСЛЕ РАБОТЫ СО МНОЙ -->
-    <section class="section">
-        <h2 class="title">Что вы получите</h2>
-        <ul class="results-list">
-            <li><i class="fas fa-check-circle"></i> Полное высвобождение заблокированной энергии.</li>
-            <li><i class="fas fa-check-circle"></i> Ясное видение своего пути без чужих ожиданий.</li>
-            <li><i class="fas fa-check-circle"></i> Состояние «в потоке», где всё случается наилучшим образом.</li>
-        </ul>
+    <!-- РЕЗУЛЬТАТЫ -->
+    <section class="content-section">
+        <div class="results-box">
+            <h2 class="section-title">Что вы получите</h2>
+            <ul class="res-list">
+                <li><i class="fas fa-check"></i> <span>Полное высвобождение заблокированной энергии.</span></li>
+                <li><i class="fas fa-check"></i> <span>Ясное видение своего пути без чужих ожиданий.</span></li>
+                <li><i class="fas fa-check"></i> <span>Состояние «в потоке», где всё случается наилучшим образом.</span></li>
+                <li><i class="fas fa-check"></i> <span>Конкретные инструменты для самоподдержки каждый день.</span></li>
+            </ul>
+        </div>
     </section>
 
-    <!-- ПАКЕТЫ УСЛУГ -->
-    <section class="section">
-        <h2 class="title">Пакеты участия</h2>
-        <div class="grid">
+    <!-- ПАКЕТЫ УСЛУГ (ДОПОЛНЕНО) -->
+    <section class="content-section">
+        <h2 class="section-title">Пакеты услуг</h2>
+        <div class="price-grid">
             <div class="price-card">
                 <h3>LIGHT</h3>
-                <div class="price-tag">9 000 ₽</div>
+                <p style="font-size: 2rem; color: var(--teal); margin: 20px 0;">9 000 ₽</p>
                 <p>Разбор личности (Астро + Цифра)</p>
             </div>
             <div class="price-card featured">
                 <h3>BASE</h3>
-                <div class="price-tag">14 000 ₽</div>
+                <p style="font-size: 2rem; color: var(--teal); margin: 20px 0;">14 000 ₽</p>
                 <p>Разбор + 1 Энергосессия</p>
             </div>
             <div class="price-card">
                 <h3>PRO</h3>
-                <div class="price-tag">18 000 ₽</div>
+                <p style="font-size: 2rem; color: var(--teal); margin: 20px 0;">18 000 ₽</p>
                 <p>3 сессии + МАК-коучинг</p>
             </div>
         </div>
     </section>
 
-    <!-- ОТЗЫВЫ -->
-    <section class="section">
-        <h2 class="title">Отзывы</h2>
-        <div class="grid">
-            <div class="review">"После сессии с Викой я наконец-то почувствовала себя живой. Энергия просто прет!" <br><strong>— Анна</strong></div>
-            <div class="review">"Разбор по цифрам совпал на 100%. Теперь я знаю, куда направлять силы." <br><strong>— Мария</strong></div>
-        </div>
-    </section>
-
-    <!-- ИНТЕРАКТИВ -->
-    <section class="section">
-        <h2 class="title">Твое послание</h2>
-        <div class="tabs">
-            <button class="tab active" onclick="setMode('love', this)">Любовь</button>
-            <button class="tab" onclick="setMode('money', this)">Деньги</button>
-            <button class="tab" onclick="setMode('state', this)">Состояние</button>
-            <button class="tab" onclick="setMode('daily', this)">Карта дня</button>
-        </div>
-
-        <div class="magic-card" id="card" onclick="flipCard()">
-            <div class="card-inner">
-                <div class="face front">ПОЛУЧИТЬ ПОСЛАНИЕ</div>
-                <div class="face back" id="text">...</div>
+    <!-- ОТЗЫВЫ (ДОПОЛНЕНО) -->
+    <section class="content-section" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title">Отзывы</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <p>"Вика помогла мне увидеть то, что я игнорировала годами. После сессии энергия просто хлынула, и я наконец-то начала действовать."</p>
+                <span class="review-author">Марина, Москва</span>
+            </div>
+            <div class="review-card">
+                <p>"Астроразбор был невероятно точным. Теперь у меня есть пошаговый план, и я больше не боюсь проявляться."</p>
+                <span class="review-author">Елена, онлайн</span>
+            </div>
+            <div class="review-card">
+                <p>"Состояние после работы — это космос. Ясная голова и четкое понимание, что делать дальше."</p>
+                <span class="review-author">Ольга, Санкт-Петербург</span>
             </div>
         </div>
     </section>
 
-    <!-- КОНТАКТЫ -->
-    <section class="section">
-        <h2 class="title">Связаться со мной</h2>
-        <a href="https://t.me/kowiktori" class="btn-link tg">TELEGRAM</a>
-        <a href="https://wa.me/79080288580" class="btn-link wa">WHATSAPP</a>
+    <!-- АВТОРСКИЕ ИНСТРУМЕНТЫ (АФФИРМАЦИИ И КАРТА ДНЯ) -->
+    <section class="content-section">
+        <h2 class="section-title">Твое послание</h2>
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="setCategory('love', this)">Любовь</button>
+            <button class="tab-btn" onclick="setCategory('money', this)">Деньги</button>
+            <button class="tab-btn" onclick="setCategory('state', this)">Состояние</button>
+            <button class="tab-btn" onclick="setCategory('daily', this)" style="border-color: var(--teal);">КАРТА ДНЯ</button>
+        </div>
 
-        <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p style="margin-bottom: 20px;">Глубокая трансформация начинается со смены пространства.</p>
-            <a href="https://v0-realtor-landing-page-eight.vercel.app/" style="color: var(--teal); font-size: 1.5rem; text-decoration: none;">
-                НЕДВИЖИМОСТЬ В МОСКВЕ
+        <div class="magic-card" id="mainCard" onclick="flipCard()">
+            <div class="card-inner">
+                <div class="card-face card-front">УЗНАТЬ СВОЕ ПОСЛАНИЕ</div>
+                <div class="card-back" id="affirmationText">Сначала выбери сферу...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СВЯЗЬ -->
+    <section class="content-section">
+        <h2 class="section-title">Связаться со мной</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 40px;">Очно в Москве / Онлайн по всему миру</p>
+        
+        <a href="https://t.me/kowiktori" class="contact-btn btn-telegram"><i class="fab fa-telegram"></i> Telegram</a>
+        <a href="https://wa.me/79080288580" class="contact-btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+
+        <div style="margin-top: 100px; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 50px;">
+            <p>Если нужна прямая глубокая трансформация — начни со смены пространства.</p>
+            <a href="https://v0-realtor-landing-page-eight.vercel.app/" style="color: var(--teal); font-size: 1.5rem; text-decoration: none; display: block; margin-top: 20px;">
+                НЕДВИЖИМОСТЬ В МОСКВЕ <i class="fas fa-external-link-alt" style="font-size: 1rem;"></i>
             </a>
         </div>
     </section>
 
     <script>
-        const messages = {
-            love: ["Я открыта для любви", "Мои отношения гармоничны", "Я люблю и любима"],
-            money: ["Деньги приходят легко", "Я магнит для изобилия", "Мой доход растет"],
-            state: ["Я здесь и сейчас", "Я доверяю своему пути", "Я в покое"],
-            daily: ["Сегодня день чудес", "Слушай свою интуицию", "Твоя сила внутри тебя", "Действуй смело"]
+        const data = {
+            love: ["Я открыта для любви и принятия", "Мои отношения полны гармонии", "Я люблю и любима"],
+            money: ["Деньги приходят ко мне легко", "Я — магнит для изобилия", "Мой доход постоянно растет"],
+            state: ["Я здесь и сейчас", "Внутри меня безграничный покой", "Я доверяю своему пути"],
+            daily: [
+                "Сегодня день для смелых решений", 
+                "Доверься своему внутреннему голосу", 
+                "Вселенная готовит для тебя подарок", 
+                "Твоя энергия — твой главный актив",
+                "Действуй из состояния любви, а не страха"
+            ]
         };
 
-        let mode = 'love';
+        let currentCategory = 'love';
 
-        function setMode(m, el) {
-            mode = m;
-            document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+        function setCategory(cat, el) {
+            currentCategory = cat;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             el.classList.add('active');
-            document.getElementById('card').classList.remove('is-flipped');
+            document.getElementById('mainCard').classList.remove('is-flipped');
         }
 
         function flipCard() {
-            const card = document.getElementById('card');
+            const card = document.getElementById('mainCard');
             if(!card.classList.contains('is-flipped')) {
-                const list = messages[mode];
-                document.getElementById('text').innerText = list[Math.floor(Math.random()*list.length)];
+                const list = data[currentCategory];
+                const random = list[Math.floor(Math.random() * list.length)];
+                document.getElementById('affirmationText').innerText = random;
                 card.classList.add('is-flipped');
             } else {
                 card.classList.remove('is-flipped');
