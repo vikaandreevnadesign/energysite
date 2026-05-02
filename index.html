@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вика Кокурина | Путь к себе</title>
+    <title>Вика Кокурина | Энергокоуч, Астролог, МАК — Москва и онлайн</title>
     
-    <!-- Мета-теги для SEO -->
-    <meta name="description" content="Энергокоуч и астролог Вика Кокурина. Помогаю обрести спокойствие, ясность и энергию через энерготерапию, МАК и астрологию.">
-    
+    <!-- SEO -->
+    <meta name="description" content="Вика Кокурина — энергокоуч, астролог и МАК-специалист в Москве. Помогаю убрать блоки, обрести ясность и энергию через энерготерапию, астрологию и метафорические карты. Онлайн и очно.">
+    <meta name="keywords" content="энергокоуч Москва, астролог Москва, МАК сессия, энерготерапия, натальная карта, цифровая психология, Вика Кокурина">
+    <link rel="canonical" href="https://ya-est.ru/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Вика Кокурина | Энергокоуч и Астролог">
+    <meta property="og:description" content="Помогаю обрести спокойствие, ясность и энергию через энерготерапию, МАК и астрологию. Онлайн и очно в Москве.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ya-est.ru/">
+    <meta property="og:image" content="https://ya-est.ru/my-photo.jpg">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Вика Кокурина | Энергокоуч и Астролог">
+    <meta name="twitter:description" content="Помогаю обрести спокойствие, ясность и энергию. Онлайн и очно в Москве.">
+
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -52,7 +67,7 @@
 
         .hero-content { position: relative; z-index: 10; width: 100%; max-width: 800px; }
 
-        .concept-title {
+        h1.concept-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.8rem, 8vw, 5.5rem);
             letter-spacing: 12px;
@@ -93,6 +108,33 @@
         .list-items { text-align: left; display: inline-block; list-style: none; }
         .list-items li { margin: 15px 0; font-size: 1.1rem; opacity: 0.8; display: flex; align-items: flex-start; }
         .list-items li::before { content: "—"; margin-right: 15px; color: var(--violet); }
+
+        /* --- ABOUT ME --- */
+        .about-section {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 30px; color: var(--teal); }
+        .about-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            opacity: 0.9;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .about-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
+        .about-tag {
+            border: 1px solid rgba(139,92,246,0.4);
+            color: var(--teal);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
 
         /* --- SERVICES (ACCORDION) --- */
         .energy-section { padding: 80px 20px; position: relative; }
@@ -151,7 +193,7 @@
             font-size: 1.2rem;
         }
 
-        /* --- НОВЫЙ БЛОК: ПАКЕТЫ УСЛУГ --- */
+        /* --- ПАКЕТЫ УСЛУГ --- */
         .packages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -169,7 +211,7 @@
         .package-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--teal); margin-bottom: 15px; }
         .package-price { font-size: 1.8rem; font-weight: 600; margin-bottom: 20px; }
 
-        /* --- НОВЫЙ БЛОК: ОТЗЫВЫ КАРУСЕЛЬЮ --- */
+        /* --- ОТЗЫВЫ --- */
         .carousel-container {
             position: relative;
             max-width: 800px;
@@ -187,7 +229,7 @@
         }
         .btn-prev { left: 0; } .btn-next { right: 0; }
 
-        /* --- НОВЫЙ БЛОК: КАРТА ДНЯ --- */
+        /* --- КАРТА ДНЯ --- */
         .magic-card-container {
             width: 280px; height: 420px;
             perspective: 1000px; margin: 40px auto;
@@ -212,7 +254,7 @@
             font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic;
         }
 
-        /* --- BUTTONS --- */
+        /* --- КНОПКИ --- */
         .btn-main {
             display: inline-flex; align-items: center; justify-content: center;
             gap: 12px; margin: 10px; text-decoration: none; padding: 18px 35px;
@@ -224,11 +266,11 @@
         .btn-outline { border: 1px solid var(--teal); color: var(--teal); background: transparent; }
         .btn-outline:hover { background: var(--teal); color: var(--deep); }
 
-        /* --- GIFTS --- */
+        /* --- ПОДАРКИ --- */
         .gift-header { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin: 80px 0 20px; color: var(--teal); text-align: center; }
-        .project-block { margin: 20px auto 60px; max-width: 950px; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+        .project-block { margin: 20px auto 60px; max-width: 950px; border-radius: 30px; overflow: hidden; background: #0a0814; box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
 
-        /* --- TEST BOX --- */
+        /* --- ТЕСТ --- */
         .quiz-container {
             background: rgba(255,255,255,0.03);
             padding: 60px 40px;
@@ -238,12 +280,25 @@
             display: flex; flex-direction: column; justify-content: center;
         }
 
+        /* --- МОБИЛЬНАЯ ВЕРСИЯ --- */
         @media (max-width: 768px) {
             .energy-grid { grid-template-columns: 1fr; }
             .center-orb { margin: 20px auto; order: -1; }
             .concept-title { letter-spacing: 4px; }
             .service-card { margin: 10px 0; }
             .package-card.highlight { transform: none; }
+            .text-block { padding: 40px 20px; }
+            .about-section { padding: 40px 20px; }
+            .energy-section { padding: 40px 20px; }
+            .gift-header { margin: 40px 0 10px; font-size: 1.8rem; }
+            .project-block { margin-bottom: 30px; border-radius: 16px; }
+            .quiz-container { padding: 30px 20px; }
+            .hero-intro { font-size: 1.1rem; }
+            .hero-name { font-size: 1.5rem; }
+            .text-block h2 { font-size: 2rem; }
+            .about-text { font-size: 1.1rem; }
+            .packages-grid { grid-template-columns: 1fr; }
+            .btn-main { padding: 14px 24px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -252,13 +307,13 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="concept-title">Путь к себе</div>
+            <h1 class="concept-title">Путь к себе</h1>
             <div class="hero-intro">
                 Ты можешь жить без тревоги, внутреннего напряжения и постоянных сомнений.<br><br>
                 Я помогаю вернуться в состояние, где есть ясность, спокойствие и ощущение «я на своём месте».
             </div>
             <div class="profile-circle">
-                <img src="my-photo.jpg" alt="Вика Кокурина">
+                <img src="my-photo.jpg" alt="Вика Кокурина — энергокоуч и астролог">
             </div>
             <div class="hero-name">Вика Кокурина</div>
             <div class="hero-desc">Энергокоуч • Астролог • Мастер состояний</div>
@@ -280,6 +335,24 @@
         </p>
     </section>
 
+    <!-- ОБО МНЕ -->
+    <section class="about-section">
+        <h2>Обо мне</h2>
+        <p class="about-text">
+            8 лет в банковской сфере — и в один момент я поняла, что живу чужую жизнь.<br><br>
+            Астрология была рядом всегда — 20 лет я изучала натальные карты и строила соляры. Но настоящий перелом случился, когда я честно признала себе: моя энергия разрушает, а не созидает.<br><br>
+            Я прошла путь трансформации сама. Стала практиком Рэйки, освоила энергокоучинг и МАК. И теперь помогаю другим то, что однажды изменило меня.
+        </p>
+        <div class="about-tags">
+            <span class="about-tag">Энергокоучинг</span>
+            <span class="about-tag">Астрология · 20 лет</span>
+            <span class="about-tag">Практик Рэйки</span>
+            <span class="about-tag">МАК</span>
+            <span class="about-tag">Цифровая психология</span>
+            <span class="about-tag">Москва и онлайн</span>
+        </div>
+    </section>
+
     <!-- КАРТА УСЛУГ С АККОРДЕОНОМ -->
     <section class="energy-section">
         <div class="energy-grid">
@@ -288,16 +361,18 @@
                     <h3>ЭНЕРГОТЕРАПИЯ <i class="fas fa-chevron-down"></i></h3>
                     <p class="card-short">Снимаем внутреннее напряжение, убираем блоки и возвращаем ресурс.</p>
                     <div class="card-detailed">
-                        Это глубокая работа с вашим подсознанием по методу Соло. Мы находим «зажимы», где застряли эмоции, и мягко высвобождаем их. 
-                        Результат: ощущение легкости в теле, прилив сил и та самая «опора внутри», которую невозможно пошатнуть.
+                        Глубокая работа с подсознанием по методу Соло. Находим «зажимы», где застряли эмоции, и мягко высвобождаем их. Результат: ощущение лёгкости в теле, прилив сил и та самая «опора внутри».
+                        <br><br>
+                        <strong style="color:var(--teal)">Сессия — 3 500 ₽ · 60–90 мин · онлайн или очно</strong>
                     </div>
                 </div>
                 <div class="service-card" onclick="toggleCard(this)">
                     <h3>АСТРОЛОГИЯ <i class="fas fa-chevron-down"></i></h3>
                     <p class="card-short">Глубокое понимание себя, своих сильных сторон и текущего периода.</p>
                     <div class="card-detailed">
-                        Натальная карта — это ваш личный «чертеж» души. Мы разберем ваши таланты, финансовые каналы и предназначение. 
-                        Вы поймете, почему определенные события происходят именно сейчас и как использовать энергию планет себе во благо.
+                        Натальная карта — ваш личный «чертёж» души. Разберём таланты, финансовые каналы и предназначение. Вы поймёте, почему определённые события происходят именно сейчас.
+                        <br><br>
+                        <strong style="color:var(--teal)">Натальная карта — 3 500 ₽ · Соляр — 2 500 ₽ · Мини-разбор — 1 000 ₽</strong>
                     </div>
                 </div>
             </div>
@@ -309,16 +384,18 @@
                     <h3>МАК <i class="fas fa-chevron-down"></i></h3>
                     <p class="card-short">Работа с подсознанием через образы и метафоры.</p>
                     <div class="card-detailed">
-                        Метафорические карты помогают обойти логику и «договориться» напрямую с подсознанием. 
-                        Вы сами увидите ответы на свои вопросы в образах. Идеально для выхода из повторяющихся жизненных сценариев.
+                        Метафорические карты помогают обойти логику и договориться напрямую с подсознанием. Вы сами увидите ответы на свои вопросы в образах. Идеально для выхода из повторяющихся сценариев.
+                        <br><br>
+                        <strong style="color:var(--teal)">МАК-сессия — 1 500 ₽ · 45–60 мин · онлайн или очно</strong>
                     </div>
                 </div>
                 <div class="service-card" onclick="toggleCard(this)">
                     <h3>ЦИФРОВАЯ ПСИХОЛОГИЯ <i class="fas fa-chevron-down"></i></h3>
                     <p class="card-short">Даёт точный вектор понимания вашей реализации.</p>
                     <div class="card-detailed">
-                        Анализ ваших данных через призму цифровых кодов. Это помогает понять ваш личный «код успеха», 
-                        скрытые барьеры в коммуникации и наиболее эффективные пути реализации в социуме.
+                        Анализ через призму цифровых кодов по дате рождения. Помогает понять личный «код успеха», скрытые барьеры в коммуникации и наиболее эффективные пути реализации.
+                        <br><br>
+                        <strong style="color:var(--teal)">Разбор — 2 000 ₽ · письменный отчёт · онлайн</strong>
                     </div>
                 </div>
             </div>
@@ -329,13 +406,13 @@
         <svg id="energy-svg" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1;"></svg>
     </section>
 
-    <!-- НОВЫЙ БЛОК: КАРТА ДНЯ -->
+    <!-- КАРТА ДНЯ -->
     <section class="text-block">
         <h2>Твоё послание на сегодня</h2>
         <div class="magic-card-container" onclick="this.classList.toggle('flipped')">
             <div class="magic-card-inner">
                 <div class="card-face card-front">
-                    <i class="fas fa-sparkles" style="font-size: 3rem; color: var(--teal); margin-bottom: 20px;"></i>
+                    <i class="fas fa-star" style="font-size: 3rem; color: var(--teal); margin-bottom: 20px;"></i>
                     <p style="letter-spacing: 2px;">ОТКРОЙ КАРТУ</p>
                 </div>
                 <div class="card-face card-back">
@@ -345,7 +422,7 @@
         </div>
     </section>
 
-    <!-- БЛОК РЕЗУЛЬТАТОВ -->
+    <!-- РЕЗУЛЬТАТЫ -->
     <section class="text-block" style="background: rgba(45, 212, 191, 0.05); border-radius: 80px;">
         <h2>После работы со мной:</h2>
         <ul class="list-items">
@@ -357,23 +434,27 @@
         </ul>
     </section>
 
-    <!-- НОВЫЙ БЛОК: ОТЗЫВЫ КАРУСЕЛЬЮ -->
+    <!-- ОТЗЫВЫ -->
     <section class="text-block">
         <h2>Отзывы тех, кто уже в пути</h2>
         <div class="carousel-container">
             <button class="carousel-btn btn-prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
             <div class="carousel-track">
                 <div class="review-slide">
-                    <p class="review-content">"После энерготерапии у Вики я впервые за долгое время почувствовала, что могу дышать полной грудью. Тревога просто ушла."</p>
-                    <p class="review-author">— Марина, 34 года</p>
+                    <p class="review-content">"После терапии у меня приток сил и энергии. Спасибо огромное!"</p>
+                    <p class="review-author">— Олеся</p>
                 </div>
                 <div class="review-slide">
-                    <p class="review-content">"Астрологический разбор помог мне принять важное решение в бизнесе. Всё совпало до мелочей, я очень доволен результатом."</p>
-                    <p class="review-author">— Алексей, 42 года</p>
+                    <p class="review-content">"Спасибо за сессию, всё очень круто. Я прям зарядилась энергией на вечер — уж точно!"</p>
+                    <p class="review-author">— Олеся</p>
                 </div>
                 <div class="review-slide">
-                    <p class="review-content">"Работа с МАК-картами стала для меня настоящим откровением. Нашла ответы внутри себя, которые не видела годами."</p>
-                    <p class="review-author">— Светлана, 29 лет</p>
+                    <p class="review-content">"Фразы, которые я проговаривала, очень мощные. В конце почувствовала такую лёгкость во всём теле и прилив энергии."</p>
+                    <p class="review-author">— Участница сессии</p>
+                </div>
+                <div class="review-slide">
+                    <p class="review-content">"Вика круто и динамично провела терапию с крутыми смыслами. Благодарю! Мне кажется, внутри как-то теплее стало."</p>
+                    <p class="review-author">— Людмила Летуновская</p>
                 </div>
             </div>
             <button class="carousel-btn btn-next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
@@ -393,7 +474,7 @@
         </div>
     </section>
 
-    <!-- НОВЫЙ БЛОК: ПАКЕТЫ УСЛУГ -->
+    <!-- ПАКЕТЫ УСЛУГ -->
     <section class="text-block">
         <h2>Форматы взаимодействия</h2>
         <div class="packages-grid">
@@ -401,45 +482,52 @@
                 <h3>LIGHT</h3>
                 <p class="package-price">9 000 ₽</p>
                 <ul class="list-items" style="font-size: 0.9rem;">
-                    <li>Астрологический разбор</li>
-                    <li>Разбор Цифровая психология</li>
-                    <li>Письменный отчет</li>
+                    <li>Натальная карта — полный разбор</li>
+                    <li>Цифровая психология</li>
+                    <li>Письменный отчёт + запись созвона</li>
                 </ul>
             </div>
             <div class="package-card highlight">
                 <h3>BASE</h3>
-                <p class="package-price">14 000 ₽</p>
+                <p class="package-price">15 000 ₽</p>
                 <ul class="list-items" style="font-size: 0.9rem;">
+                    <li>Натальная карта + Соляр</li>
                     <li>1 сессия энерготерапии</li>
                     <li>МАК-диагностика</li>
-                    <li>Сопровождение 1 неделя</li>
+                    <li>Сопровождение 2 недели</li>
                 </ul>
             </div>
             <div class="package-card">
                 <h3>VIP</h3>
                 <p class="package-price">35 000 ₽</p>
                 <ul class="list-items" style="font-size: 0.9rem;">
-                    <li>Астроразбор+МАК-сессия</li>
-                    <li>3 глубоких терапии</li>
-                    <li>Сопровождение 1 неделя+отчет</li>
+                    <li>Астроразбор + МАК + Цифровая психология</li>
+                    <li>3 сессии энерготерапии</li>
+                    <li>Сопровождение 1 месяц</li>
+                    <li>Письменный отчёт</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- ПОДАРКИ -->
+    <!-- МЕДИТАЦИЯ -->
     <h2 class="gift-header">Медитация для уверенности</h2>
     <section class="project-block">
         <iframe 
-  src="meditation.html" 
-  style="width:100%; height:520px; border:none; border-radius:16px; display:block;"
-  scrolling="no">
+            src="meditation.html" 
+            style="width:100%; height:580px; border:none; display:block;"
+            scrolling="no">
         </iframe>
     </section>
 
+    <!-- АФФИРМАЦИИ -->
     <h2 class="gift-header">Аффирмации для вашего состояния</h2>
     <section class="project-block">
-        <iframe src="affirmations.html" style="width:100%; height:620px; border:none; display:block; overflow:hidden;" scrolling="no"></iframe>
+        <iframe 
+            src="affirmations.html" 
+            style="width:100%; height:620px; border:none; display:block;"
+            scrolling="no">
+        </iframe>
     </section>
 
     <!-- ФИНАЛЬНЫЙ БЛОК -->
@@ -453,9 +541,6 @@
                 <i class="fas fa-globe"></i> ОНЛАЙН ИЗ ЛЮБОЙ ТОЧКИ МИРА<br>
                 <i class="fas fa-map-marker-alt"></i> ОЧНО В МОСКВЕ
             </p>
-            <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.7;">
-    
-            </p>
         </div>
 
         <p style="font-weight: 600; color: var(--text); margin-bottom: 40px; font-size: 1.2rem;">
@@ -463,7 +548,7 @@
         </p>
         
         <div style="margin-bottom: 60px;">
-            <a href="https://wa.me/79080288580?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D1%81%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BC%D0%BE%D1%8E%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D1%8E" class="btn-main btn-wa">
+            <a href="https://wa.me/79080288580?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D1%81%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0" class="btn-main btn-wa">
                 <i class="fab fa-whatsapp"></i> Разобрать мою ситуацию
             </a>
             <a href="https://t.me/kowiktori" class="btn-main btn-tg">
@@ -473,7 +558,7 @@
 
         <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 50px;">
             <p style="font-style: italic; opacity: 0.8; margin-bottom: 25px; font-size: 1.1rem;">
-                Хочешь, чтобы твой дом стал местом силы? <br>Начни менять свою жизнь с нового пространства.
+                Хочешь, чтобы твой дом стал местом силы?<br>Начни менять свою жизнь с нового пространства.
             </p>
             <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank" class="btn-main btn-outline" style="padding: 18px 45px;">
                 Подбор недвижимости
@@ -485,27 +570,16 @@
         // АККОРДЕОН
         function toggleCard(card) {
             const allCards = document.querySelectorAll('.service-card');
-            allCards.forEach(c => {
-                if (c !== card) c.classList.remove('active');
-            });
+            allCards.forEach(c => { if (c !== card) c.classList.remove('active'); });
             card.classList.toggle('active');
-            setTimeout(drawLines, 500); // Перерисовываем линии после анимации
+            setTimeout(drawLines, 500);
         }
 
         // ТЕСТ
         const testData = [
-            { 
-                step: "ШАГ 2 ИЗ 3",
-                text: "Где в теле вы чаще всего чувствуете дискомфорт или зажим?", 
-                options: ["В горле (трудно выражать себя)", "В груди (тяжесть, тревога)", "В животе (страх, неуверенность)"] 
-            },
-            { 
-                step: "ШАГ 3 ИЗ 3",
-                text: "Какой результат для вас сейчас важнее всего?", 
-                options: ["Просто выдохнуть и отдохнуть", "Обрести четкий план действий", "Почувствовать внутреннюю опору"] 
-            }
+            { step: "ШАГ 2 ИЗ 3", text: "Где в теле вы чаще всего чувствуете дискомфорт?", options: ["В горле (трудно выражать себя)", "В груди (тяжесть, тревога)", "В животе (страх, неуверенность)"] },
+            { step: "ШАГ 3 ИЗ 3", text: "Какой результат для вас сейчас важнее всего?", options: ["Просто выдохнуть и отдохнуть", "Обрести чёткий план действий", "Почувствовать внутреннюю опору"] }
         ];
-
         let stepIndex = 0;
 
         function nextStep() {
@@ -515,17 +589,16 @@
                 document.getElementById('q-title').innerText = data.step;
                 document.getElementById('q-text').innerText = data.text;
                 let buttons = "";
-                data.options.forEach((opt, i) => {
+                data.options.forEach(opt => {
                     buttons += `<button class="btn-main btn-outline" style="width:100%; margin-top:10px;" onclick="nextStep()">${opt}</button>`;
                 });
                 document.getElementById('q-options').innerHTML = buttons;
                 stepIndex++;
             } else {
-                const waLink = "https://wa.me/79080288580?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D1%81%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BC%D0%BE%D1%8E%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D1%8E";
                 container.innerHTML = `
-                    <h3 style="color:var(--teal); margin-bottom:20px; font-size: 1.8rem;">Анализ завершен</h3>
-                    <p style="line-height:1.6; margin-bottom:30px;">Ваше состояние требует внимания к энергетическим центрам. Самое время вернуть себе ресурс.</p>
-                    <a href="${waLink}" class="btn-main btn-wa" style="width:100%; margin:0;">Разобрать мою ситуацию</a>
+                    <h3 style="color:var(--teal); margin-bottom:20px; font-size: 1.8rem; font-family:'Cormorant Garamond',serif;">Анализ завершён</h3>
+                    <p style="line-height:1.6; margin-bottom:30px; opacity:0.85;">Ваше состояние требует внимания к энергетическим центрам. Самое время вернуть себе ресурс.</p>
+                    <a href="https://wa.me/79080288580" class="btn-main btn-wa" style="width:100%; margin:0; justify-content:center;">Разобрать мою ситуацию</a>
                 `;
             }
         }
@@ -533,7 +606,9 @@
         // ЭНЕРГО-ЛИНИИ
         function drawLines() {
             const svg = document.getElementById('energy-svg');
-            const orb = document.querySelector('.center-orb').getBoundingClientRect();
+            const orbEl = document.querySelector('.center-orb');
+            if (!orbEl) return;
+            const orb = orbEl.getBoundingClientRect();
             const cards = document.querySelectorAll('.service-card');
             const svgRect = svg.getBoundingClientRect();
             let linesHTML = "";
@@ -548,7 +623,7 @@
             svg.innerHTML = linesHTML;
         }
 
-        // КАРУСЕЛЬ ОТЗЫВОВ
+        // КАРУСЕЛЬ
         let currentSlide = 0;
         function moveSlide(direction) {
             const track = document.querySelector('.carousel-track');
@@ -560,12 +635,13 @@
         // ИНИЦИАЛИЗАЦИЯ
         window.addEventListener('load', () => {
             drawLines();
-            // Массив посланий для карты дня
             const messages = [
-                "Доверься своему внутреннему голосу. Сегодня он ведет тебя к истине.",
+                "Доверься своему внутреннему голосу. Сегодня он ведёт тебя к истине.",
                 "Твоя энергия — твой главный ресурс. Береги её сегодня.",
                 "Все ответы уже внутри тебя. Просто дай себе время их услышать.",
-                "Сегодня идеальный день, чтобы отпустить старое и впустить новое."
+                "Сегодня идеальный день, чтобы отпустить старое и впустить новое.",
+                "Ты уже на правильном пути. Просто продолжай идти.",
+                "Твоя сила — в твоей чуткости. Не заглушай её."
             ];
             document.getElementById('daily-message').innerText = messages[Math.floor(Math.random() * messages.length)];
         });
